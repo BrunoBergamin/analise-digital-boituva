@@ -5,31 +5,32 @@
    Regra:  cor semantica nunca carrega significado sozinha (sempre icone + rotulo)
    ============================================================ */
 
-:root {
-  color-scheme: light;
+/* ESCURO E O TEMA PADRAO. O claro so entra com data-theme="light". */
+:root, :root[data-theme="dark"] {
+  color-scheme: dark;
 
   /* neutros com leve vies frio, escolhidos e nao herdados */
-  --ground: #f7f7f5;
-  --surface: #ffffff;
-  --surface-sunk: #f1f1ee;
-  --ink: #16181a;
-  --ink-2: #4a4e52;
-  --ink-3: #797e83;
-  --rule: #e3e3df;
-  --rule-strong: #cfcfc9;
+  --ground: #0f1113;
+  --surface: #17191c;
+  --surface-sunk: #1f2225;
+  --ink: #f1f2f1;
+  --ink-2: #b3b9be;
+  --ink-3: #838a90;
+  --rule: #292d31;
+  --rule-strong: #3d4348;
 
   /* acento: sobrescrito por pagina */
-  --accent: #17515f;
-  --accent-ink: #0e3b46;
-  --accent-wash: #e6eff1;
+  --accent: #6bb3c4;
+  --accent-ink: #9fd3df;
+  --accent-wash: #16303a;
 
   /* semanticos, separados do acento */
-  --good: #0f7a2e;
-  --good-wash: #e7f3ea;
-  --warn: #b87503;
-  --warn-wash: #fbf1de;
-  --crit: #c0342b;
-  --crit-wash: #fbeae8;
+  --good: #52c26e;
+  --good-wash: #15301d;
+  --warn: #e8ac3f;
+  --warn-wash: #33280f;
+  --crit: #f0776d;
+  --crit-wash: #351c1a;
 
   --sans: "Archivo", system-ui, sans-serif;
   --serif: "Source Serif 4", Georgia, serif;
@@ -40,48 +41,25 @@
   --r: 3px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme="light"])) {
-    color-scheme: dark;
-    --ground: #121314;
-    --surface: #1b1d1f;
-    --surface-sunk: #232628;
-    --ink: #f2f2f0;
-    --ink-2: #b6bbbf;
-    --ink-3: #868c91;
-    --rule: #2e3235;
-    --rule-strong: #454a4e;
-    --accent: #6bb3c4;
-    --accent-ink: #9fd3df;
-    --accent-wash: #17313a;
-    --good: #4fbf6a;
-    --good-wash: #16301d;
-    --warn: #e5a83c;
-    --warn-wash: #33280e;
-    --crit: #ef7a70;
-    --crit-wash: #341c1a;
-  }
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --ground: #121314;
-  --surface: #1b1d1f;
-  --surface-sunk: #232628;
-  --ink: #f2f2f0;
-  --ink-2: #b6bbbf;
-  --ink-3: #868c91;
-  --rule: #2e3235;
-  --rule-strong: #454a4e;
-  --accent: #6bb3c4;
-  --accent-ink: #9fd3df;
-  --accent-wash: #17313a;
-  --good: #4fbf6a;
-  --good-wash: #16301d;
-  --warn: #e5a83c;
-  --warn-wash: #33280e;
-  --crit: #ef7a70;
-  --crit-wash: #341c1a;
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground: #f7f7f5;
+  --surface: #ffffff;
+  --surface-sunk: #f1f1ee;
+  --ink: #16181a;
+  --ink-2: #4a4e52;
+  --ink-3: #797e83;
+  --rule: #e3e3df;
+  --rule-strong: #cfcfc9;
+  --accent: #17515f;
+  --accent-ink: #0e3b46;
+  --accent-wash: #e6eff1;
+  --good: #0f7a2e;
+  --good-wash: #e7f3ea;
+  --warn: #b87503;
+  --warn-wash: #fbf1de;
+  --crit: #c0342b;
+  --crit-wash: #fbeae8;
 }
 
 * { box-sizing: border-box; }
@@ -241,8 +219,6 @@ em { font-style: italic; }
 .sev-good { background: var(--good-wash); color: var(--good); }
 .sev-flat { background: var(--surface-sunk); color: var(--ink-2); }
 
-:root[data-theme="dark"] .sev-crit, :root[data-theme="dark"] .sev-warn, :root[data-theme="dark"] .sev-good { filter: none; }
-
 /* ---------- Ficha de achado ---------- */
 .issue {
   background: var(--surface); border: 1px solid var(--rule);
@@ -303,14 +279,12 @@ em { font-style: italic; }
   border: 1px solid var(--rule); display: grid; place-items: center;
   font-size: 9px; font-weight: 800; color: var(--ink-3); flex: none;
 }
+/* azul de link do Google: claro no escuro, escuro no claro */
 .serp-title {
-  font-size: 19px; line-height: 1.35; color: #1a0dab; font-weight: 500;
+  font-size: 19px; line-height: 1.35; color: #8ab4f8; font-weight: 500;
   margin-bottom: 4px; letter-spacing: -0.005em;
 }
-:root[data-theme="dark"] .serp-title { color: #8ab4f8; }
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme="light"])) .serp-title { color: #8ab4f8; }
-}
+:root[data-theme="light"] .serp-title { color: #1a0dab; }
 .serp-title mark {
   background: var(--crit-wash); color: var(--crit); font-weight: 700;
   padding: 0 3px; border-radius: 2px;

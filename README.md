@@ -36,7 +36,7 @@ Tudo decorre disso:
   Azul-petróleo `#17515f` no RLS, ameixa `#5e2a45` no CowPig. Semânticos separados:
   verde `#0f7a2e`, âmbar `#b87503`, vermelho-tijolo `#c0342b`.
 - Cor semântica **nunca** carrega significado sozinha: sempre acompanha ícone e rótulo.
-- Tema claro e escuro, ambos desenhados, seguindo o sistema e com alternância manual persistida.
+- **Tema escuro por padrão** (tokens no `:root`); o claro existe só sob `data-theme="light"`, atrás do botão.
 - Sem travessão em nenhum texto, por convenção do projeto.
 
 ## Estrutura

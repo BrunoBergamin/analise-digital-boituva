@@ -90,13 +90,12 @@
 
 <script>
 (function () {
+  // escuro e o padrao; o botao so existe para quem quiser claro
   var r = document.documentElement, b = document.getElementById('t'), s = null;
   try { s = localStorage.getItem('theme'); } catch (e) {}
-  if (s) r.setAttribute('data-theme', s);
+  r.setAttribute('data-theme', s === 'light' ? 'light' : 'dark');
   b.addEventListener('click', function () {
-    var c = r.getAttribute('data-theme'),
-        d = window.matchMedia('(prefers-color-scheme: dark)').matches,
-        n = c ? (c === 'dark' ? 'light' : 'dark') : (d ? 'light' : 'dark');
+    var n = r.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     r.setAttribute('data-theme', n);
     try { localStorage.setItem('theme', n); } catch (e) {}
   });
