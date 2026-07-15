@@ -1,4 +1,4 @@
-# Auditorias Digitais — Boituva/SP
+# Auditorias Digitais: Boituva/SP
 
 Duas auditorias técnicas independentes de site e presença no Google, publicadas como páginas estáticas
 no GitHub Pages. Cada relatório é autônomo e tem URL própria, para ser compartilhado separadamente
@@ -34,11 +34,11 @@ Federal (via BrasilAPI), CNA, LinkedIn, Indeed e diretórios locais.
 Cada nota é a **porcentagem de itens aprovados** numa checagem objetiva. Item cumprido = 1, parcial =
 0,5, ausente = 0. Sem peso subjetivo.
 
-- **SEO técnico** — 16 itens
-- **Performance** — 7 itens
-- **Presença (local/digital)** — 10 itens
-- **Segurança** — 8 itens
-- **Índice geral** — SEO 30%, presença 35%, performance 20%, segurança 15%
+- **SEO técnico**: 16 itens
+- **Performance**: 7 itens
+- **Presença (local/digital)**: 10 itens
+- **Segurança**: 8 itens
+- **Índice geral**: SEO 30%, presença 35%, performance 20%, segurança 15%
 
 A régua completa e a lista de itens estão na seção "Método" de cada relatório.
 
@@ -50,12 +50,12 @@ registram explicitamente que a nota em estrelas do Google não pôde ser obtida 
 
 ## Achados principais
 
-**RLS Motosport** — 100% dos anúncios de moto trazem a palavra "portas" no título, herdada de um template
+**RLS Motosport**: 100% dos anúncios de moto trazem a palavra "portas" no título, herdada de um template
 de carros; as 182 URLs do sitemap apontam para `http://` e todas redirecionam; zero dados estruturados;
 o H1 da home é a logomarca. O CNPJ que circula em sites de consulta associado à loja é de outra empresa,
 em Alagoas, já baixada.
 
-**CowPig** — Selo de inspeção **SISP 0543** (estadual), documentado em PDF oficial da CNA, o que restringe
+**CowPig**: Selo de inspeção **SISP 0543** (estadual), documentado em PDF oficial da CNA, o que restringe
 a venda ao estado de São Paulo e torna um e-commerce nacional juridicamente inviável. A home não tem H1
 nem H2, o canonical aponta para `index.php` e o sitemap está congelado em 2021.
 
