@@ -70,7 +70,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.page { max-width: var(--wide); margin: 0 auto; padding: 0 24px; }
+/* ---------- Fundo 3D ---------- */
+#bg3d {
+  position: fixed; inset: 0; width: 100vw; height: 100vh;
+  z-index: 0; pointer-events: none; display: block;
+  opacity: 0.9;
+}
+/* leve escurecimento por cima do orbe, para o texto respirar */
+.bg-scrim {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 78% 8%, transparent 0%, transparent 34%, var(--ground) 78%),
+    linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--ground) 62%, transparent) 46%, var(--ground) 100%);
+}
+.page { position: relative; z-index: 2; max-width: var(--wide); margin: 0 auto; padding: 0 24px; }
 .col { max-width: var(--col); }
 
 section { padding: 52px 0; border-top: 1px solid var(--rule); }
