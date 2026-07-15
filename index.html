@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditorias Digitais — Boituva/SP</title>
+<meta name="description" content="Auditorias técnicas independentes de sites e presença no Google.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/report.css">
+<style>
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow);
+    text-decoration: none; color: inherit; display: block;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+  .card h3 { margin: 0 0 4px; font-size: 20px; letter-spacing: -0.02em; }
+  .card .cat { font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px; }
+  .card p { font-size: 13.5px; color: var(--text-secondary); margin: 0 0 16px; }
+  .card-score { display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px; }
+  .card-score b { font-size: 34px; letter-spacing: -0.03em; line-height: 1; }
+  .card-score span { font-size: 13px; color: var(--text-muted); }
+  .card-cta { font-size: 13px; font-weight: 620; color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">Auditorias Digitais <span>/ Boituva, SP</span></div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema">Tema</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Índice</div>
+  <h1>Duas auditorias, dois relatórios</h1>
+  <p class="lede">
+    Análise técnica independente de site e presença no Google, medida diretamente nos servidores em
+    15/07/2026. Cada relatório é autônomo e tem link próprio, para ser compartilhado separadamente com
+    cada empresa.
+  </p>
+</header>
+
+<section style="padding-top:6px">
+  <div class="cards">
+
+    <a class="card" href="rls-motosport/">
+      <h3>RLS Motosport</h3>
+      <div class="cat">Revenda de motos · Boituva/SP · rlsmotos.com.br</div>
+      <div class="card-score">
+        <b>51</b><span>/100 · índice geral</span>
+        <span class="pill pill-serious" style="margin-left:auto">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+          Requer atenção
+        </span>
+      </div>
+      <p>
+        Melhor reputação da cidade, presa em avaliações de 2023. Toda moto é anunciada no Google com a
+        palavra "portas", herdada de um template de carros, e o sitemap entrega 182 endereços errados.
+      </p>
+      <div class="card-cta">Abrir relatório →</div>
+    </a>
+
+    <a class="card" href="cowpig/">
+      <h3>CowPig</h3>
+      <div class="cat">Frigorífico premium · Boituva/SP · cowpig.com.br</div>
+      <div class="card-score">
+        <b>35</b><span>/100 · índice geral</span>
+        <span class="pill pill-critical" style="margin-left:auto">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+          Crítico
+        </span>
+      </div>
+      <p>
+        Produto de elite, camada digital parada em 2021. O achado principal não é técnico: o selo de inspeção
+        é estadual, o que prende a venda ao estado de São Paulo e torna um e-commerce nacional inviável.
+      </p>
+      <div class="card-cta">Abrir relatório →</div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>Auditorias independentes, produzidas a partir de dados públicos e de requisições diretas aos servidores em 15 de julho de 2026.</p>
+  <p>Sem vínculo com as empresas auditadas. Cada relatório declara seus próprios limites e o que não pôde ser verificado.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  if (saved) root.setAttribute('data-theme', saved);
+  btn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme');
+    var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = cur ? (cur === 'dark' ? 'light' : 'dark') : (sysDark ? 'light' : 'dark');
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
