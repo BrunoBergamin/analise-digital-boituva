@@ -3,15 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auditoria Digital: CowPig (Boituva/SP)</title>
-<meta name="description" content="Diagnóstico independente do site e da presença digital do Frigorífico CowPig, Boituva/SP.">
+<title>Análise do site: CowPig</title>
+<meta name="description" content="Análise do site cowpig.com.br: layout, segurança, LGPD e Google.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/report.css?v=3">
+<link rel="stylesheet" href="../assets/report.css?v=5">
 <style>
-  /* acento CowPig: ameixa, do mundo da carne */
   :root, :root[data-theme="dark"] { --accent: #d095b0; --accent-ink: #e5b8cb; --accent-wash: #33202b; }
   :root[data-theme="light"] { --accent: #5e2a45; --accent-ink: #462034; --accent-wash: #f2e9ee; }
 </style>
@@ -20,14 +19,11 @@
 
 <div class="topbar">
   <div class="topbar-in">
-    <div class="mark"><i></i>Auditoria Digital <span>/ CowPig</span></div>
+    <div class="mark"><i></i>Análise do site <span>/ CowPig</span></div>
     <nav>
-      <a href="#resumo">Resumo</a>
-      <a href="#selo">O limite do selo</a>
-      <a href="#problemas">Problemas</a>
-      <a href="#marca">A marca</a>
-      <a href="#praca">A praça</a>
-      <a href="#plano">O que fazer</a>
+      <a href="#pontos">Os pontos</a>
+      <a href="#google">No Google</a>
+      <a href="#fazer">O que fazer</a>
       <a href="#recado">Recado técnico</a>
     </nav>
     <button class="tbtn" id="t" type="button">Tema</button>
@@ -36,874 +32,312 @@
 
 <div class="page">
 
-<!-- ===================== HERO ===================== -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <p class="eyebrow">Diagnóstico independente &middot; 15 de julho de 2026</p>
-      <h1>Um produto de primeira, apresentado por um site de 2021.</h1>
+      <p class="eyebrow">Análise do site &middot; 15 de julho de 2026</p>
+      <h1>Fotos ótimas, mas o site é de uns dez anos atrás.</h1>
       <p class="lede">
-        A CowPig tem fazenda própria, genética própria, abate próprio e foi a primeira de São Paulo a
-        carimbar o selo Hereford. Nada disso chega ao cliente pela internet. Mas o problema principal
-        deste relatório não é de marketing: é de selo.
+        O produto aparece bem nas imagens. O que envelheceu é o resto: o layout, a forma como o
+        Google lê o site e alguns cuidados de segurança e de proteção de dados. Nada disso é grave,
+        mas puxa a nota para baixo.
       </p>
     </div>
-
     <div class="gauge">
-      <svg width="168" height="168" viewBox="0 0 168 168" role="img" aria-label="Nota geral 35 de 100">
+      <svg width="168" height="168" viewBox="0 0 168 168" role="img" aria-label="Nota do site 42 de 100">
         <circle cx="84" cy="84" r="70" fill="none" stroke="var(--surface-sunk)" stroke-width="13"/>
-        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--crit)" stroke-width="13"
-                stroke-dasharray="154 440" stroke-linecap="butt"
-                transform="rotate(-90 84 84)"/>
-        <text x="84" y="88" text-anchor="middle" class="gauge-num">35</text>
+        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--warn)" stroke-width="13"
+                stroke-dasharray="185 440" stroke-linecap="butt" transform="rotate(-90 84 84)"/>
+        <text x="84" y="88" text-anchor="middle" class="gauge-num">42</text>
         <text x="84" y="107" text-anchor="middle" class="gauge-den">de 100</text>
       </svg>
-      <p class="gauge-cap">Nota geral</p>
+      <p class="gauge-cap">Nota do site</p>
     </div>
   </div>
-
   <dl class="facts">
     <div class="fact"><dt>Site</dt><dd><a href="https://www.cowpig.com.br/" target="_blank" rel="noopener">cowpig.com.br</a></dd></div>
-    <div class="fact"><dt>Inspeção</dt><dd>SISP 0543</dd></div>
-    <div class="fact"><dt>Matrizes</dt><dd>2.500</dd></div>
-    <div class="fact"><dt>Fundação</dt><dd>1995</dd></div>
+    <div class="fact"><dt>Abre em</dt><dd>0,85 s</dd></div>
+    <div class="fact"><dt>Última atualização</dt><dd>2021</dd></div>
   </dl>
 </section>
 
-<!-- ===================== COMO LER ===================== -->
-<section id="comoler">
+<!-- OS PONTOS -->
+<section id="pontos">
   <div class="col">
-    <p class="eyebrow">Antes de começar</p>
-    <h2>Este relatório é para você ler sozinho</h2>
-    <p class="sec-intro" style="margin-bottom:0">
-      Não tem palavra de internet em lugar nenhum, de propósito. No fim tem um
-      <a href="#recado">recado pronto</a> para você mandar para quem cuida do site,
-      sem precisar entender nada do que está escrito lá. É só copiar, colar e enviar.
-    </p>
+    <p class="eyebrow">O resumo</p>
+    <h2>Cinco pontos</h2>
+    <p class="sec-intro">Cada bloco diz a situação e o que fazer. Nada de termo técnico.</p>
+  </div>
+
+  <div class="checks">
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Layout</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Desatualizado
+        </span>
+      </div>
+      <p>
+        As fotos da carne são excelentes, esse é o forte do site. Mas a montagem é antiga: aquele
+        banner girando que ocupa a tela toda, título em letra grande sobre a foto, texto pequeno e
+        apagado. É a cara de site de uns dez anos atrás. Some-se a isso que a página
+        <strong>demora mais do que deveria para abrir</strong>, porque as fotos são pesadas e o site
+        não guarda nada na memória do celular: quem volta baixa tudo de novo.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Um visual mais atual e limpo valoriza o produto que já é bom, e deixa a página mais leve. É o
+        item que mais muda a impressão de quem entra.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Segurança</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Dois ajustes
+        </span>
+      </div>
+      <p>
+        Testei se dá para invadir ou trocar imagem e texto do site por fora. <strong>Não dá</strong>,
+        e isso é o que mais importa: nenhum arquivo de senha está exposto e não dá para injetar
+        conteúdo pelo endereço. Mas achei dois descuidos. Duas pastas do site (onde ficam as fotos e
+        os arquivos) <strong>mostram a lista de tudo que tem dentro</strong> para qualquer pessoa,
+        como um armário sem porta. E um controle de sessão do site está sem as travas de segurança
+        recomendadas.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Fechar a listagem dessas pastas e ativar as travas. É configuração de servidor, rápida.
+        Recado, item 4.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>No Google</h3>
+        <span class="sev sev-crit">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+          Precisa mexer
+        </span>
+      </div>
+      <p>
+        O nome do site no Google é só <strong>"Cowpig, nobre como nenhuma outra"</strong>, que é bonito
+        de marca mas não tem a palavra <em>carne</em>, nem <em>frigorífico</em>, nem <em>São Paulo</em>.
+        Quem procura "carne premium" não acha. Além disso, o site tem mais de 60 receitas publicadas,
+        que é ótimo conteúdo, mas <strong>montado de um jeito que o Google mal enxerga</strong>: sem
+        data e sem a ficha que mostra a foto do prato na busca. Veja o exemplo
+        <a href="#google">abaixo</a>.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Ajustar o nome no Google e a forma como as receitas são publicadas. Recado, itens 1 a 3.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Google Meu Negócio</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Confirmar no celular
+        </span>
+      </div>
+      <p>
+        Aqui não consegui uma resposta fechada, e prefiro ser honesto: procurei em dez lugares e
+        <strong>não encontrei a nota em estrelas do Google</strong> da CowPig, o que é estranho para
+        uma marca desse porte. Pode ser que o perfil não esteja bem preenchido, ou nem esteja
+        confirmado. Achei ainda que a marca está espalhada em <strong>três páginas de Facebook e dois
+        Instagram</strong> diferentes, o que divide o público.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Abrir o Google Maps no celular e conferir se o perfil da CowPig aparece, com nota, foto e
+        horário. Se não aparecer direito, criar ou reivindicar o perfil. E juntar as redes numa página
+        só por rede.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Lei de proteção de dados (LGPD)</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Quase lá
+        </span>
+      </div>
+      <p>
+        Nesta parte a CowPig está melhor que a maioria: tem página de privacidade citando a LGPD, tem
+        página específica de LGPD e tem o aviso de cookies. Falta um detalhe importante, porém: o site
+        <strong>já começa a rastrear o visitante (pelo Facebook) antes de ele aceitar</strong> os
+        cookies, e o aviso só tem o botão "aceito tudo", sem opção de recusar. Pela LGPD o rastreio
+        deveria esperar o aceite, e o aceite deveria poder ser recusado.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Ajustar o aviso para só ligar o rastreamento depois do "aceito", e oferecer a opção de recusar.
+        Recado, item 5.
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ===================== RESUMO ===================== -->
-<section id="resumo">
+<!-- NO GOOGLE -->
+<section id="google">
   <div class="col">
-    <p class="eyebrow">Em 30 segundos</p>
-    <h2>Três coisas que você precisa saber</h2>
-    <p class="sec-intro">A primeira vale mais que todas as outras juntas.</p>
+    <p class="eyebrow">Veja com seus olhos</p>
+    <h2>É assim que o site aparece hoje</h2>
+    <p class="sec-intro">O que o Google mostra hoje, e o que poderia mostrar.</p>
   </div>
-
-  <div class="tldr">
-    <div class="tldr-item">
-      <div class="tldr-n">1</div>
-      <div>
-        <h3>Seu selo só permite vender dentro de São Paulo</h3>
-        <p>
-          A CowPig trabalha com inspeção estadual (SISP 0543). Isso quer dizer que vender para outro
-          estado é proibido. Por isso qualquer conversa sobre "abrir uma loja online" precisa começar
-          por aí, e não pelo site. É a decisão que define todas as outras.
-        </p>
-      </div>
-    </div>
-    <div class="tldr-item">
-      <div class="tldr-n">2</div>
-      <div>
-        <h3>Você já pagou por 60 receitas que ninguém acha</h3>
-        <p>
-          Tem mais de 60 receitas e matérias publicadas no site, exatamente o que o público de churrasco
-          procura no Google. É conteúdo bom, já feito e já pago. Só que está montado de um jeito que o
-          Google mal enxerga, e nenhum visitante deixa contato.
-        </p>
-      </div>
-    </div>
-    <div class="tldr-item">
-      <div class="tldr-n">3</div>
-      <div>
-        <h3>Seu concorrente mais parecido está seis vezes na sua frente</h3>
-        <p>
-          A Wessel tem a mesma história de família, o mesmo tipo de carne e o mesmo discurso, e tem seis
-          vezes mais público que você. E a Pamplona, sua concorrente mais direta em suíno, acabou de
-          desistir da venda online. Tem espaço vago agora.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SELO ===================== -->
-<section id="selo">
-  <div class="col">
-    <p class="eyebrow">O achado principal</p>
-    <h2>O selo estadual prende a CowPig em um estado</h2>
-    <p class="sec-intro">
-      Você conhece esta regra melhor que eu. O ponto do relatório é outro: é o que ela significa para
-      qualquer plano de internet, e é por isso que ela vem antes de tudo.
-    </p>
-  </div>
-
-  <div class="note note-crit">
-    <div class="note-hd">
-      <span class="sev sev-crit">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-        Restrição legal
-      </span>
-      <h3>Onde a CowPig pode vender hoje</h3>
-    </div>
-
-    <div class="states" role="img" aria-label="Dos 27 estados brasileiros, apenas São Paulo está liberado">
-      <div class="st">AC</div><div class="st">AL</div><div class="st">AP</div><div class="st">AM</div><div class="st">BA</div><div class="st">CE</div><div class="st">DF</div><div class="st">ES</div><div class="st">GO</div>
-      <div class="st">MA</div><div class="st">MT</div><div class="st">MS</div><div class="st">MG</div><div class="st">PA</div><div class="st">PB</div><div class="st">PR</div><div class="st">PE</div><div class="st">PI</div>
-      <div class="st">RJ</div><div class="st">RN</div><div class="st">RS</div><div class="st">RO</div><div class="st">RR</div><div class="st">SC</div><div class="st st-on">SP</div><div class="st">SE</div><div class="st">TO</div>
-    </div>
-    <div class="states-key">
-      <span><i style="background:var(--good);border-color:var(--good)"></i> 1 estado liberado</span>
-      <span><i style="background:var(--surface-sunk)"></i> 26 proibidos</span>
-    </div>
-
-    <p style="margin-top:18px">
-      No documento oficial da <strong>Confederação da Agricultura e Pecuária do Brasil</strong>, que lista
-      os frigoríficos credenciados no protocolo Hereford, a CowPig aparece como <strong>SISP 0543</strong>.
-      SISP é a inspeção do estado de São Paulo. Produto com selo estadual só pode ser vendido dentro do
-      próprio estado: para sair de São Paulo é preciso o selo federal (SIF) ou entrar no SISBI. Vender
-      fora sem isso é infração sanitária.
-    </p>
-
-    <div class="ev">Frigoríficos credenciados no protocolo Hereford (documento da CNA)
-
-  <u>SIF</u>  1733 ........................... federal, vende no Brasil inteiro
-  <u>SIF</u>   584 ........................... federal, vende no Brasil inteiro
-  <u>SIF</u>  1710 ........................... federal, vende no Brasil inteiro
-  <u>SIE</u>  1106  Frigorifico EL Golli ..... estadual, preso em Santa Catarina
-  <b>SISP 0543  Frigorifico CowPig ......... estadual, preso em São Paulo</b>
-  <u>SISBI</u> 0561  Frispar ................. equivalência, vende no Brasil inteiro</div>
-
-    <p>
-      São seis frigoríficos credenciados no mesmo protocolo de qualidade. <strong>Quatro deles podem
-      vender no país inteiro. A CowPig é uma das duas que não podem.</strong> Ou seja, ela disputa um selo
-      nacional de qualidade com alcance comercial de um estado só.
-    </p>
-    <p class="src">
-      Fonte: <a href="https://cnabrasil.org.br/storage/arquivos/Relacao-de-Unidades.pdf" target="_blank" rel="noopener">documento da CNA</a>,
-      confirmado também pelo BeefPoint. <strong>Nenhuma fonte pública menciona SIF para a CowPig, mas não
-      achar não é prova de não ter.</strong> Se vocês têm SIF ou SISBI, este relatório muda, e é a primeira
-      coisa a confirmar.
-    </p>
-  </div>
-
-  <div class="col">
-    <h3>Por que isso reordena tudo</h3>
-    <p>
-      Para uma marca premium sem loja online, o conselho óbvio de qualquer consultoria seria "abram um
-      e-commerce". Para a CowPig, <strong>esse conselho é ilegal em âmbito nacional</strong>. É por isso
-      que este relatório trata a falta de loja virtual de um jeito diferente: em boa parte ela não é
-      descuido, é consequência da lei. E explica por que todos os pontos de venda são paulistas.
-    </p>
-    <p>
-      A pergunta certa, então, não é sobre site. É esta: <strong>a empresa quer buscar o selo federal e
-      abrir o Brasil, ou quer dominar São Paulo</strong>, onde já é legal, já tem distribuição montada e
-      onde a concorrente mais direta acabou de sair? As duas respostas levam a projetos completamente
-      diferentes. Nenhuma delas começa refazendo o site.
-    </p>
-  </div>
-
   <div class="grid2">
-    <div class="note">
-      <div class="note-hd"><h3>Caminho A: dominar São Paulo</h3></div>
-      <p>
-        Legal hoje, sem esperar nada. A distribuição já existe, a marca já está nas casas de carne da
-        capital, e a Pamplona <strong>acabou de desligar a venda online</strong>. Uma loja virtual que só
-        entrega dentro de São Paulo é possível agora.
-      </p>
-    </div>
-    <div class="note">
-      <div class="note-hd"><h3>Caminho B: buscar o selo federal</h3></div>
-      <p>
-        Abre o país e permite brigar com a Wessel em outro nível, mas é projeto de certificação, com
-        prazo, investimento e adequação de planta. É decisão de diretoria, não de marketing.
-      </p>
-    </div>
-  </div>
-
-  <div class="note note-crit">
-    <div class="note-hd">
-      <span class="sev sev-warn">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
-        Contradição
-      </span>
-      <h3>O site vende rastreabilidade e esconde o selo</h3>
-    </div>
-    <p>
-      Procurei as palavras "SIF", "SISP", "inspeção" e "SISBI" na página inicial e em mais quatro páginas
-      do site, incluindo "A Empresa" e as de cortes. <strong>Não aparecem em lugar nenhum.</strong>
-    </p>
-    <p>
-      Uma marca cujo discurso central é "do campo à mesa, com rastreabilidade total" está justamente
-      omitindo o registro sanitário que prova a fiscalização do produto. Para o comprador técnico, um
-      restaurante ou um distribuidor, esse é um dos primeiros dados que ele procura.
-    </p>
-  </div>
-</section>
-
-<!-- ===================== PROBLEMAS ===================== -->
-<section id="problemas">
-  <div class="col">
-    <p class="eyebrow">Os problemas do site, do pior para o menor</p>
-    <h2>O que está travando a marca na internet</h2>
-    <p class="sec-intro">
-      Cada ficha responde três perguntas: o que está acontecendo, o que isso te custa, e quem resolve.
-    </p>
-  </div>
-
-  <!-- 1 -->
-  <article class="issue">
-    <div class="issue-top">
-      <div class="issue-rank">1</div>
-      <div class="issue-head">
-        <h3>Mais de 60 receitas prontas, e o Google mal sabe que existem</h3>
-        <div class="issue-meta">
-          <span class="sev sev-crit">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-            Grave
-          </span>
-          <span class="sev sev-flat">o maior desperdício do site</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="band">
-      <p class="band-label">O que está acontecendo</p>
-      <p>
-        Este é o problema mais caro e, por baixo dele, a melhor notícia. Vocês já produziram mais de 60
-        páginas de receita e matéria, e são exatamente as perguntas que o público de churrasco digita no
-        Google: <em>"qual o ponto ideal da carne"</em>, <em>"o que é marmoreio"</em>,
-        <em>"qual o melhor sal para churrasco"</em>, <em>"tomahawk e prime rib"</em>. Esse acervo está
-        pronto e já foi pago.
-      </p>
-      <p>
-        Só que três coisas o impedem de trabalhar. <strong>Nenhuma receita mostra a data</strong>, e o
-        Google usa a data para decidir se o conteúdo é atual. <strong>Nenhuma manda ao Google a ficha da
-        receita</strong>, que é o que faz aparecer a foto do prato e o tempo de preparo direto no
-        resultado da busca. E <strong>o site não pede o contato de ninguém</strong>: não tem cadastro,
-        não tem newsletter, não tem nada.
-      </p>
-    </div>
-
-    <div class="band band-cost">
-      <p class="band-label">O que isso te custa</p>
-      <p>
-        Todo mundo que a receita atrai vai embora sem deixar rastro. Você paga pelo conteúdo, atrai a
-        pessoa certa, a pessoa lê e some. É o mesmo que fazer degustação na porta da fábrica e não
-        perguntar o nome de ninguém.
-      </p>
-    </div>
-
-    <div class="band band-fix">
-      <p class="band-label">Quem resolve</p>
-      <p>
-        Quem cuida do site. E vale destacar: <strong>isso funciona independentemente da resposta sobre o
-        selo</strong>, porque conteúdo não tem fronteira estadual. É o item de melhor retorno que não
-        depende de nenhuma decisão de diretoria. <a href="#recado">Recado pronto</a>, itens 4 e 5.
-      </p>
-    </div>
-  </article>
-
-  <!-- 2 -->
-  <article class="issue">
-    <div class="issue-top">
-      <div class="issue-rank">2</div>
-      <div class="issue-head">
-        <h3>A página inicial não tem título, e o endereço oficial dela aponta para o vazio</h3>
-        <div class="issue-meta">
-          <span class="sev sev-crit">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-            Grave
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="band">
-      <p class="band-label">O que está acontecendo</p>
-      <p>
-        São duas falhas na mesma página. A primeira: toda página tem um letreiro principal, que diz ao
-        Google do que aquilo trata. É a placa da loja. <strong>Sua página inicial não tem placa
-        nenhuma.</strong> Ela começa direto pelos subtítulos, como um documento que pula o título e a
-        seção e abre no meio.
-      </p>
-      <p>
-        A segunda é pior. Todo site declara qual é o endereço oficial de cada página, para o Google não
-        se confundir entre versões. O da sua página inicial <strong>aponta para um arquivo que não é um
-        endereço</strong>. Na prática, quando o Google pergunta "qual é o endereço oficial da CowPig?",
-        o site responde uma coisa que não faz sentido.
-      </p>
-    </div>
-
-    <div class="band band-cost">
-      <p class="band-label">O que isso te custa</p>
-      <p>
-        O Google fica na dúvida sobre qual é a página principal da marca. E, sem a placa, ele precisa
-        adivinhar do que o site trata a partir do texto solto.
-      </p>
-    </div>
-
-    <div class="band band-fix">
-      <p class="band-label">Quem resolve</p>
-      <p>
-        Quem cuida do site. É rápido. <a href="#recado">Recado pronto</a>, itens 1 e 2.
-      </p>
-    </div>
-  </article>
-
-  <!-- 3 -->
-  <article class="issue">
-    <div class="issue-top">
-      <div class="issue-rank">3</div>
-      <div class="issue-head">
-        <h3>O índice do site está parado em 2021</h3>
-        <div class="issue-meta">
-          <span class="sev sev-crit">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-            Grave
-          </span>
-          <span class="sev sev-flat">84 páginas, todas com data de 08/09/2021</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="band">
-      <p class="band-label">O que está acontecendo</p>
-      <p>
-        Todo site entrega ao Google um índice das próprias páginas, e junto vai a data em que cada uma
-        mudou pela última vez. O Google usa essa data para decidir o que vale a pena revisitar.
-      </p>
-      <p>
-        O índice da CowPig tem 84 páginas, e <strong>todas as 84 têm exatamente a mesma data:
-        8 de setembro de 2021</strong>. Foi gerado uma vez, por uma ferramenta gratuita, e nunca mais.
-        A mensagem que o site passa é: <em>aqui não mudou nada em cinco anos, não precisa voltar</em>.
-        E ainda tem outro detalhe: existe um arquivo que serve para avisar o Google onde esse índice
-        está, e <strong>ele nem existe no seu site</strong>. Ou seja, o índice está lá, mas ninguém é
-        avisado dele.
-      </p>
-    </div>
-
-    <div class="band band-cost">
-      <p class="band-label">O que isso te custa</p>
-      <p>
-        Suas 60 receitas ficam nesse índice congelado. Você diz ao Google que nada mudou, e ele acredita.
-      </p>
-    </div>
-
-    <div class="band band-fix">
-      <p class="band-label">Quem resolve</p>
-      <p>
-        Quem cuida do site. <a href="#recado">Recado pronto</a>, item 3.
-      </p>
-    </div>
-  </article>
-
-  <!-- 4 -->
-  <article class="issue">
-    <div class="issue-top">
-      <div class="issue-rank">4</div>
-      <div class="issue-head">
-        <h3>O nome do site no Google não diz que vocês vendem carne</h3>
-        <div class="issue-meta">
-          <span class="sev sev-warn">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
-            Sério
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="band">
-      <p class="band-label">O que está acontecendo</p>
-      <p>
-        O que aparece na linha azul do Google é <strong>"Cowpig | Nobre como nenhuma outra"</strong>.
-        É uma bela assinatura de marca e um péssimo anúncio: não tem a palavra <em>carne</em>, nem
-        <em>frigorífico</em>, nem <em>cortes</em>, nem <em>São Paulo</em>.
-      </p>
-      <p>
-        Quem já conhece a CowPig acha. Quem procura "carne suína premium" ou "frigorífico em Boituva"
-        não chega. E quando alguém manda o link da CowPig no WhatsApp, a caixinha de prévia sai pior do
-        que poderia, porque tem informação faltando e informação errada por trás.
-      </p>
-    </div>
-
-    <div class="band band-cost">
-      <p class="band-label">O que isso te custa</p>
-      <p>
-        Você só é encontrado por quem já te conhece. Cliente novo não chega por busca, e essa é a porta
-        mais barata que existe.
-      </p>
-    </div>
-
-    <div class="band band-fix">
-      <p class="band-label">Quem resolve</p>
-      <p>
-        Quem cuida do site. É o ajuste mais rápido de todos. <a href="#recado">Recado pronto</a>, item 6.
-      </p>
-    </div>
-  </article>
-
-  <!-- 5 -->
-  <article class="issue">
-    <div class="issue-top">
-      <div class="issue-rank">5</div>
-      <div class="issue-head">
-        <h3>O site proíbe o celular do cliente de guardar qualquer coisa</h3>
-        <div class="issue-meta">
-          <span class="sev sev-warn">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
-            Sério
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="band">
-      <p class="band-label">O que está acontecendo</p>
-      <p>
-        Normalmente o celular guarda as fotos do site na memória para não baixar tudo de novo na próxima
-        visita. O seu site usa a instrução mais radical que existe: <strong>proíbe o aparelho de guardar
-        qualquer coisa</strong>. Isso é o que um site de banco faz. Num site de fotos de carne, o efeito é
-        que toda visita baixa tudo do zero, incluindo um banner de 260 KB e uma foto de 227 KB, nenhuma
-        delas preparada para celular.
-      </p>
-      <p>
-        Tem ainda um detalhe feio: a <strong>sua logomarca é carregada por uma conexão sem cadeado</strong>.
-        Dependendo do navegador, isso pode gerar aviso de segurança bem em cima da sua marca.
-      </p>
-    </div>
-
-    <div class="band band-cost">
-      <p class="band-label">O que isso te custa</p>
-      <p>
-        Uma marca que se vende como premium não pode abrir devagar e com aviso de segurança na logo. Isso
-        contradiz o produto antes de o cliente ver o produto.
-      </p>
-    </div>
-
-    <div class="band band-fix">
-      <p class="band-label">Quem resolve</p>
-      <p>
-        Quem cuida do site. <a href="#recado">Recado pronto</a>, itens 7 e 8.
-      </p>
-    </div>
-  </article>
-</section>
-
-<!-- ===================== NOTAS ===================== -->
-<section id="notas">
-  <div class="col">
-    <p class="eyebrow">De onde saiu a nota 35</p>
-    <h2>A régua, aberta</h2>
-    <p class="sec-intro">
-      Não é opinião. Conferi uma lista de itens, um por um, direto no site. A nota é quantos por cento
-      passaram.
-    </p>
-  </div>
-
-  <div class="col bars">
     <div>
-      <div class="bar-hd"><span class="bar-name">O quanto o Google entende o site</span><span class="bar-val">41 / 100</span></div>
-      <div class="bar-track"><span class="bar-fill" style="width:41%;background:var(--crit)"></span></div>
-      <p class="bar-note">Sem placa, com o endereço oficial quebrado e o índice parado em 2021.</p>
+      <p class="serp-tag">Como está hoje</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">C</span> cowpig.com.br</div>
+        <div class="serp-title">Cowpig | Nobre como nenhuma outra</div>
+        <div class="serp-desc">A Cowpig é especialista em todas as etapas da produção da carne: seleção, matéria prima e produção de cortes especiais...</div>
+      </div>
+      <p class="src" style="margin-top:8px">Não diz que vende carne, nem onde fica.</p>
     </div>
     <div>
-      <div class="bar-hd"><span class="bar-name">Velocidade</span><span class="bar-val">29 / 100</span></div>
-      <div class="bar-track"><span class="bar-fill" style="width:29%;background:var(--crit)"></span></div>
-      <p class="bar-note">Proíbe o celular de guardar, fotos pesadas e nenhuma preparada para carregar aos poucos.</p>
-    </div>
-    <div>
-      <div class="bar-hd"><span class="bar-name">Presença e consistência da marca</span><span class="bar-val">35 / 100</span></div>
-      <div class="bar-track"><span class="bar-fill" style="width:35%;background:var(--crit)"></span></div>
-      <p class="bar-note">Público real (19 mil no Instagram), mas espalhado em 3 páginas de Facebook e 2 Instagram.</p>
-    </div>
-    <div>
-      <div class="bar-hd"><span class="bar-name">Proteção</span><span class="bar-val">31 / 100</span></div>
-      <div class="bar-track"><span class="bar-fill" style="width:31%;background:var(--crit)"></span></div>
-      <p class="bar-note">Certificado válido, mas nada além dele, e a logo carrega sem cadeado.</p>
+      <p class="serp-tag">Como poderia aparecer</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">C</span> cowpig.com.br</div>
+        <div class="serp-title">CowPig &middot; Carne premium suína e bovina, do campo à mesa &middot; SP</div>
+        <div class="serp-desc">Frigorífico com genética própria e selo Hereford. Cortes especiais de boi, porco, cordeiro e búfalo. Receitas e onde encontrar.</div>
+      </div>
+      <p class="src" style="margin-top:8px">Fala de carne, de onde fica e do que tem de especial.</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== MARCA ===================== -->
-<section id="marca">
+<!-- O QUE FAZER -->
+<section id="fazer">
   <div class="col">
-    <p class="eyebrow">A marca por aí</p>
-    <h2>Uma marca, muitos endereços</h2>
-    <p class="sec-intro">
-      Cada perfil repetido divide o público e confunde quem procura. Nada aqui é estratégia: é manutenção
-      atrasada, e custa quase nada arrumar.
-    </p>
+    <p class="eyebrow">Por onde começar</p>
+    <h2>Três passos</h2>
   </div>
-
-  <div class="tbl-wrap">
-    <table>
-      <thead>
-        <tr><th>Onde</th><th>O que encontrei</th><th>Situação</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>Instagram</b></td>
-          <td>@cowpig.oficial com cerca de 19 mil seguidores e 670 publicações. E um segundo perfil, @cowpig.frigorifico</td>
-          <td><span class="sev sev-warn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>2 perfis</span></td>
-        </tr>
-        <tr>
-          <td><b>Facebook</b></td>
-          <td>Três páginas diferentes no ar ao mesmo tempo: a do frigorífico, a da loja de Boituva e uma terceira com a razão social</td>
-          <td><span class="sev sev-crit"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>3 páginas</span></td>
-        </tr>
-        <tr>
-          <td><b>Google</b></td>
-          <td>Não achei a nota em estrelas em nenhuma das dez fontes que tentei, nem no próprio Maps</td>
-          <td><span class="sev sev-flat"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm.75 9.75h-1.5v-4.5h1.5v4.5zm0-6h-1.5v-1.5h1.5v1.5z"/></svg>Não verificado</span></td>
-        </tr>
-        <tr>
-          <td><b>Horário da loja</b></td>
-          <td>Três versões diferentes, entre o site, o Waze e os cadastros</td>
-          <td><span class="sev sev-warn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>3 versões</span></td>
-        </tr>
-        <tr>
-          <td><b>Farm Festival</b></td>
-          <td>O site do evento saiu do ar de vez, embora o perfil dele ainda tenha uns 26 mil seguidores</td>
-          <td><span class="sev sev-crit"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 3.5 8 6.9l3.4-3.4 1.1 1.1L9.1 8l3.4 3.4-1.1 1.1L8 9.1l-3.4 3.4-1.1-1.1L6.9 8 3.5 4.6z"/></svg>Fora do ar</span></td>
-        </tr>
-        <tr>
-          <td><b>LinkedIn</b></td>
-          <td>Cerca de 1.500 seguidores, com 201 a 500 funcionários declarados</td>
-          <td><span class="sev sev-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Certo</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note" style="margin-top:22px">
-    <div class="note-hd">
-      <span class="sev sev-flat">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm.75 9.75h-1.5v-4.5h1.5v4.5zm0-6h-1.5v-1.5h1.5v1.5z"/></svg>
-        Cuidado com a leitura fácil
-      </span>
-      <h3>"Zero reclamação" aqui não quer dizer excelência</h3>
-    </div>
-    <p>
-      No Reclame Aqui a CowPig aparece <strong>sem nota</strong>, por falta de reclamação suficiente, e com
-      zero registros entre fevereiro e julho de 2025. Parece ótimo, mas não diz nada:
-      <strong>sem venda direta ao consumidor, não existe atrito para gerar reclamação</strong>. O canal é
-      praticamente cego para vocês. Se abrirem venda online em São Paulo, essa página deixa de estar em
-      branco e vira um ativo a defender.
-    </p>
-    <p>
-      A reputação que existe medida vem de outro lugar: no <strong>Indeed</strong>, como empregadora, a
-      CowPig tem <strong>4,2 de 5, em 9 avaliações</strong>. O ponto mais fraco é salário (3,4), e cultura
-      e equilíbrio ficam bem (4,0).
-    </p>
-  </div>
-</section>
-
-<!-- ===================== PRAÇA ===================== -->
-<section id="praca">
-  <div class="col">
-    <p class="eyebrow">A praça</p>
-    <h2>Onde a CowPig está no tabuleiro</h2>
-    <p class="sec-intro">
-      A coluna que importa aqui é a do meio: quem vende direto para o consumidor e quem não vende.
-    </p>
-  </div>
-
-  <div class="tbl-wrap">
-    <table>
-      <thead>
-        <tr><th>Marca</th><th>Instagram</th><th>Vende direto?</th><th>Como se posiciona</th><th>O que isso quer dizer</th></tr>
-      </thead>
-      <tbody>
-        <tr class="me">
-          <td>CowPig</td>
-          <td class="n">~19 mil</td>
-          <td><span class="sev sev-crit"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 3.5 8 6.9l3.4-3.4 1.1 1.1L9.1 8l3.4 3.4-1.1 1.1L8 9.1l-3.4 3.4-1.1-1.1L6.9 8 3.5 4.6z"/></svg>Não</span></td>
-          <td>Premium, do campo à mesa</td>
-          <td>Produto forte, alcance preso em um estado</td>
-        </tr>
-        <tr>
-          <td><b>Wessel</b></td>
-          <td class="n">~120 mil</td>
-          <td><span class="sev sev-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Sim</span></td>
-          <td>Premium com tradição, "desde 1830"</td>
-          <td><b>É o seu espelho, e está 6x na frente.</b> Frota própria e entrega em 1 dia em SP</td>
-        </tr>
-        <tr>
-          <td><b>Pamplona</b></td>
-          <td class="n">~61 mil</td>
-          <td><span class="sev sev-warn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>Saiu</span></td>
-          <td>Suíno, praticidade, 77 anos</td>
-          <td><b>Desligou a loja online e foi para o atacado.</b> É sua concorrente mais direta em suíno</td>
-        </tr>
-        <tr>
-          <td><b>Beef Passion</b></td>
-          <td class="n">~104 mil</td>
-          <td><span class="sev sev-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Sim</span></td>
-          <td>Premium com pegada ética, abate humanizado</td>
-          <td>Prova que contar a origem vende. Só bovino, e só na capital</td>
-        </tr>
-        <tr>
-          <td><b>Swift</b></td>
-          <td class="n">~855 mil</td>
-          <td><span class="sev sev-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Sim</span></td>
-          <td>Preço e escala</td>
-          <td>Não briga pelo seu cliente</td>
-        </tr>
-        <tr>
-          <td><b>Aurora</b></td>
-          <td class="n">~210 mil</td>
-          <td><span class="sev sev-crit"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 3.5 8 6.9l3.4-3.4 1.1 1.1L9.1 8l3.4 3.4-1.1 1.1L8 9.1l-3.4 3.4-1.1-1.1L6.9 8 3.5 4.6z"/></svg>Não</span></td>
-          <td>Cooperativa, popular</td>
-          <td>Outra faixa de preço</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="src" style="margin-top:12px">
-    Os números de seguidores vieram de busca, não das páginas abertas, porque o Instagram bloqueia leitura
-    automática. Use como ordem de grandeza, não como número exato.
-  </p>
-
-  <div class="note" style="margin-top:22px">
-    <div class="note-hd">
-      <span class="sev sev-good">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>
-        Espaço vago
-      </span>
-      <h3>Ninguém ocupou "suíno premium com genética própria"</h3>
-    </div>
-    <p>
-      Frimesa e Aurora são cooperativa popular. A Pamplona era praticidade, e saiu da venda online. A Beef
-      Passion construiu 104 mil seguidores contando a origem do produto, mas é só bovino e só na capital.
-      A CowPig <strong>tem a fazenda, a genética e o abate próprio, e não tem a história contada</strong>.
-      É o único ativo desta auditoria que a concorrência não consegue comprar.
-    </p>
-  </div>
-</section>
-
-<!-- ===================== PLANO ===================== -->
-<section id="plano">
-  <div class="col">
-    <p class="eyebrow">O que fazer, nesta ordem</p>
-    <h2>A primeira decisão não é de marketing</h2>
-    <p class="sec-intro">E ela determina todas as outras.</p>
-  </div>
-
   <div class="steps">
     <div class="step">
       <div>
-        <h3>Responda a pergunta do selo antes de gastar um real</h3>
-        <p>
-          A empresa tem <strong>só SISP, ou tem também SIF ou SISBI</strong>? Se for só SISP, qualquer
-          plano de venda online para fora de São Paulo é ilegal, e o projeto certo passa a ser
-          certificação, não site. Com SIF, o país se abre. É uma conversa interna que define o orçamento
-          inteiro.
-        </p>
-        <div class="chips"><span class="chip">Esforço: <b>uma conversa</b></span><span class="chip">Custo: <b>zero</b></span><span class="chip">Define tudo</span></div>
+        <h3>Mande o recado abaixo para quem cuida do site</h3>
+        <p>Copie, cole e envie. Cobre o Google, a segurança e a LGPD de uma vez.</p>
       </div>
     </div>
     <div class="step">
       <div>
-        <h3>Faça as 60 receitas trabalharem</h3>
-        <p>
-          O conteúdo já existe e já foi pago. Mostrar a data, mandar a ficha da receita ao Google e criar
-          uma forma de pegar o contato de quem chega. <strong>Não depende da resposta do selo</strong>, e
-          é o melhor retorno pelo menor esforço do relatório.
-        </p>
-        <div class="chips"><span class="chip">Esforço: <b>baixo</b></span><span class="chip">Retorno: <b>alto</b></span><span class="chip">Não depende do selo</span></div>
+        <h3>Confira o perfil no Google Maps</h3>
+        <p>Abra o Maps no celular e procure CowPig. Veja se aparece com nota, foto e horário. Se não, reivindique o perfil. É de graça e é você quem faz.</p>
       </div>
     </div>
     <div class="step">
       <div>
-        <h3>Mande o recado para quem cuida do site</h3>
-        <p>
-          Está pronto <a href="#recado">logo abaixo</a>. Você não precisa entender o que está escrito lá:
-          copie, cole e mande. Resolve a placa, o endereço oficial, o índice de 2021 e o nome no Google
-          de uma vez.
-        </p>
-        <div class="chips"><span class="chip">Esforço: <b>copiar e colar</b></span><span class="chip">Retorno: <b>alto</b></span></div>
-      </div>
-    </div>
-    <div class="step">
-      <div>
-        <h3>Junte a marca em um perfil por rede</h3>
-        <p>
-          Três páginas de Facebook e dois Instagram dividem o público e confundem o cliente. Unifique,
-          redirecione os antigos, deixe um horário só publicado e resolva o site do Farm Festival que caiu.
-          É manutenção, não estratégia, e custa quase nada.
-        </p>
-        <div class="chips"><span class="chip">Esforço: <b>baixo</b></span><span class="chip">Custo: <b>zero</b></span></div>
-      </div>
-    </div>
-    <div class="step">
-      <div>
-        <h3>Mostre o selo e a rastreabilidade no site</h3>
-        <p>
-          A marca vende "do campo à mesa" e esconde o registro sanitário. Publicar o selo, o número da
-          inspeção e a cadeia de rastreabilidade transforma a operação real em argumento de venda,
-          principalmente para restaurante e distribuidor.
-        </p>
-        <div class="chips"><span class="chip">Esforço: <b>baixo</b></span><span class="chip">Retorno: <b>médio-alto</b></span></div>
-      </div>
-    </div>
-    <div class="step">
-      <div>
-        <h3>Se puder vender, ocupe a vaga que a Pamplona deixou</h3>
-        <p>
-          Sua concorrente mais direta em suíno desligou a venda online em outubro de 2025, e uma
-          revendedora sua está com o site fora do ar. Tem espaço vago em venda direta de suíno premium
-          exatamente onde a CowPig já distribui. O manual da Wessel está à vista de todos e é copiável.
-          <strong>Espaço vago não fica vago por muito tempo.</strong>
-        </p>
-        <div class="chips"><span class="chip">Esforço: <b>alto</b></span><span class="chip">Depende do <b>item 1</b></span></div>
+        <h3>Pense num visual mais atual</h3>
+        <p>O produto merece. As fotos já são ótimas; falta uma montagem moderna e leve em volta delas. É o que mais muda a impressão de quem entra.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== RECADO TÉCNICO ===================== -->
+<!-- RECADO -->
 <section id="recado">
   <div class="col">
     <p class="eyebrow">Para encaminhar</p>
     <h2>Recado pronto para quem cuida do site</h2>
-    <p class="sec-intro">
-      Esta é a única parte com palavra técnica, e ela não é para você. Copie daqui até o fim e mande para
-      a empresa ou pessoa que mantém o cowpig.com.br.
-    </p>
+    <p class="sec-intro">A única parte com palavra técnica, e não é para você. Copie e mande.</p>
   </div>
+  <div class="ev" style="white-space:pre-wrap">Assunto: Correções de SEO, segurança e LGPD no site cowpig.com.br
 
-  <div class="ev" style="white-space:pre-wrap">Assunto: Correções de SEO e performance no site cowpig.com.br
+Prezados, seguem itens de auditoria técnica (evidências de 15/07/2026):
 
-Prezados, seguem 8 itens levantados em auditoria técnica no site,
-com evidências coletadas em 15/07/2026. Pedimos correção.
+1) Home sem H1/H2, canonical inválido
+   A home não tem <h1> nem <h2> (hierarquia começa em <h3>).
+   O canonical aponta para "index.php" (relativo). Colocar H1 textual
+   com keyword e canonical absoluto (https://www.cowpig.com.br/).
 
-1) Home sem H1 e sem H2
-   A página inicial não possui nenhum &lt;h1&gt; nem &lt;h2&gt;; a hierarquia
-   começa direto em &lt;h3&gt; (6 ocorrências). Solicitamos um H1 textual
-   com a proposta de valor e keyword, ex.: "Carne premium suína e
-   bovina, do campo à mesa", e H2 nas seções.
+2) robots.txt inexistente e sitemap congelado
+   /robots.txt retorna 404. O sitemap.xml tem 84 URLs com o mesmo
+   lastmod (2021-09-08), gerado por xml-sitemaps.com. Criar robots.txt
+   e gerar sitemap dinâmico com lastmod real.
 
-2) Canonical relativo e inválido
-   A home declara &lt;link rel="canonical" href="index.php"/&gt;.
-   Solicitamos URL absoluta: https://www.cowpig.com.br/
-   Verificar em todas as páginas do site.
+3) Sem dados estruturados e blog sem data
+   Nenhum application/ld+json. Adicionar Organization + LocalBusiness
+   na home, Recipe nas 17 receitas e Article com datePublished nos
+   posts (hoje nenhum post exibe data). Title atual sem keyword
+   ("Cowpig | Nobre como nenhuma outra"); og:type está como "company"
+   (inválido, usar "website"); og:site_name vazio; og:url em http://.
+   Meta description com 281 caracteres (cortar para ~160).
 
-3) robots.txt inexistente e sitemap desatualizado
-   https://www.cowpig.com.br/robots.txt retorna 404.
-   Solicitamos criar o robots.txt apontando o sitemap.
-   O sitemap.xml tem 84 URLs e TODAS com o mesmo
-   lastmod: 2021-09-08T09:35:30+00:00 (gerado por
-   xml-sitemaps.com). Solicitamos geração dinâmica com lastmod real
-   por página.
-
-4) Ausência de dados estruturados
-   Não há nenhum bloco application/ld+json no site.
-   Solicitamos:
-   - Organization + LocalBusiness na home (nome, endereço, telefone,
-     horário, geo);
-   - Recipe em cada uma das 17 receitas (name, image, recipeIngredient,
-     recipeInstructions, cookTime, prepTime);
-   - Article + datePublished nos posts do blog.
-
-5) Blog e receitas sem data visível
-   Nenhum post exibe data de publicação, e não há datePublished no
-   HTML. Solicitamos exibir a data e marcar no schema.
-   Solicitamos também incluir captura de lead (newsletter/formulário):
-   hoje não existe nenhuma no site.
-
-6) Title, meta description e Open Graph
-   Title atual: "Cowpig | Nobre como nenhuma outra" (sem keyword).
-   Solicitamos algo como "Carne premium suína e bovina | CowPig".
-   Meta description tem 281 caracteres (o Google trunca em ~160).
-   og:type está como "company", que é valor INVÁLIDO no padrão Open
-   Graph. Usar "website".
-   og:site_name está vazio. og:url está em http://.
-
-7) Cache, CDN e imagens
-   Cache-Control está como "no-store, no-cache, must-revalidate",
-   o que impede qualquer reuso de estáticos. Solicitamos cache longo
-   para imagens/CSS/JS e, se possível, CDN na frente.
-   Banner: 260 KB JPEG. Segunda imagem: 227 KB. Logo: 93 KB PNG.
-   Solicitamos WebP. Nenhuma das 22 imagens tem loading="lazy" e
-   8 estão sem alt. A página carrega 25 scripts.
-
-8) Conteúdo misto e redirecionamento
-   O logo é carregado de http://cowpig.com.br/assets/img/logo_cowpig.png
-   (sem HTTPS e sem www), o que pode disparar mixed content warning.
-   Solicitamos servir por https://www.cowpig.com.br/...
-   O redirecionamento http -> https responde 302 (temporário);
-   solicitamos 301 (permanente).
+4) Segurança do servidor
+   Directory listing ABERTO em /assets/ e /midias/ (retornam índice
+   de arquivos). Desativar o autoindex do Apache nessas pastas.
+   Cookie PHPSESSID sem flags HttpOnly e Secure: adicionar ambas.
    Ausentes: Strict-Transport-Security, Content-Security-Policy,
    X-Frame-Options, X-Content-Type-Options.
+   O logo é carregado por http:// (mixed content) e o redirect
+   http->https responde 302 (usar 301).
 
-Ficamos no aguardo de um prazo para cada item.</div>
+5) LGPD / cookies
+   O pixel do Facebook (facebook.com/tr, PageView) dispara no
+   carregamento, ANTES do consentimento do banner de cookies. O banner
+   só oferece "Aceito todos os termos", sem opção de recusar/gerenciar.
+   Adequar: só disparar rastreadores após o opt-in e oferecer recusa
+   granular (a política em /privacidade e /lgpd já cita a LGPD, manter).
+
+6) Performance e imagens
+   Cache-Control "no-store": ativar cache de estáticos e usar CDN.
+   Banner 260 KB e outra imagem 227 KB em JPEG: converter para WebP.
+   21 de 22 imagens sem width/height (causa layout shift); nenhuma tem
+   loading="lazy"; 8 sem alt. Há ainda <img src='myprevimage.png'> e
+   'mynextimage.png' (placeholders da lib de galeria) publicados; e um
+   <img src="#" id="foto"> que aponta para lugar nenhum. Limpar.
+
+Aguardamos prazo por item.</div>
 </section>
 
-<!-- ===================== MÉTODO ===================== -->
+<!-- MÉTODO -->
 <section id="metodo">
   <div class="col">
     <p class="eyebrow">Transparência</p>
-    <h2>Como foi feito e o que ficou sem resposta</h2>
-    <p class="sec-intro">
-      Relatório que esconde o próprio limite não serve para decidir nada. Estes são os meus.
-    </p>
+    <h2>Como foi medido e o que não entra</h2>
   </div>
-
   <details class="method">
-    <summary>O que eu não consegui verificar (leia antes de decidir qualquer coisa)</summary>
+    <summary>O que foi conferido</summary>
     <div class="method-body">
       <ul>
-        <li><b>O SISP 0543 está documentado. A ausência de SIF, não.</b> Nenhuma fonte pública menciona selo federal para a CowPig, mas isso não prova que não exista. <b>Confirmar internamente é o item 1 do plano.</b></li>
-        <li><b>A nota do Google.</b> Dez fontes tentadas, incluindo Maps, Waze, Foursquare e TripAdvisor. Nenhuma trouxe. Não inventei número.</li>
-        <li><b>Seguidores de redes sociais</b>, da CowPig e dos concorrentes, vieram de busca, não das páginas abertas: o Instagram exige login e o Reclame Aqui bloqueia consulta automática. São ordens de grandeza.</li>
-        <li><b>Li diretamente:</b> o site da CowPig, LinkedIn, Indeed, Econodata, Waze e o documento da CNA. <b>Não auditei:</b> Instagram, Facebook e Reclame Aqui.</li>
-        <li>Há <b>divergência de CEP</b> entre fontes (18556-712 e 18550-000) e <b>três versões de horário</b> da loja. Não deu para resolver à distância.</li>
-        <li>A data de fundação diverge: o LinkedIn diz 1950, a imprensa diz 1975 e o CNPJ abre em 1995. Provavelmente é fazenda, frigorífico e formalização da empresa, mas é dedução minha.</li>
+        <li>Consultas diretas ao site em <b>15/07/2026</b>: velocidade, cabeçalhos, certificado, peso das imagens e o texto entregue ao Google.</li>
+        <li><b>Segurança passiva:</b> arquivos sensíveis, listagem de pastas, cookie, mixed content e teste de injeção por endereço com marcador inofensivo. Nada tocou o servidor de forma indevida.</li>
+        <li><b>LGPD:</b> presença de política, menção à lei, banner de cookie, momento em que os rastreadores disparam e opção de recusa.</li>
+        <li>Nota: Google 35%, layout e velocidade 30%, segurança 20%, LGPD 15%.</li>
       </ul>
     </div>
   </details>
-
   <details class="method">
-    <summary>O que foi medido, e como</summary>
+    <summary>Limites</summary>
     <div class="method-body">
       <ul>
-        <li>Consultas diretas ao site em <b>15/07/2026</b>, medindo tempo de resposta, peso de cada imagem, certificado e o que o site entrega ao Google.</li>
-        <li>Busca por menção a selo sanitário na página inicial e em <b>4 páginas internas</b>.</li>
-        <li>Leitura do <b>documento oficial da CNA</b> com a relação de unidades credenciadas no protocolo Hereford, onde consta o SISP 0543.</li>
-        <li>Confirmação de que <b>não existe carrinho de compras</b> no cowpig.com.br.</li>
-        <li>Consulta do CNPJ, do quadro societário e das filiais em base pública.</li>
-      </ul>
-    </div>
-  </details>
-
-  <details class="method">
-    <summary>Como a nota foi calculada, item por item</summary>
-    <div class="method-body">
-      <p>Item cumprido vale 1 ponto, meio cumprido 0,5, ausente 0. A nota é a porcentagem do total.</p>
-      <ul>
-        <li><b>O quanto o Google entende o site: 16 itens</b>, entre eles a placa da página, o endereço oficial, o índice, a data das páginas e a ficha das receitas.</li>
-        <li><b>Velocidade: 7 itens</b>, entre eles tempo de resposta, peso das fotos e memória do navegador.</li>
-        <li><b>Presença e marca: 10 itens</b>, entre eles nota no Google, perfil único por rede, datas no blog e captura de contato.</li>
-        <li><b>Proteção: 8 itens</b>, entre eles certificado, redirecionamento e conteúdo carregado sem cadeado.</li>
-        <li><b>Nota geral:</b> Google 30%, presença e marca 35%, velocidade 20%, proteção 15%.</li>
+        <li>Isto analisa <b>o site</b> e o Google. Não avalia concorrência, preço nem estratégia comercial.</li>
+        <li>A <b>nota em estrelas do Google</b> não saiu por ferramenta; precisa de consulta manual no perfil da empresa.</li>
+        <li>A checagem de segurança é a que se faz de fora, sem invadir. Auditoria profunda exigiria acesso ao servidor.</li>
+        <li>A adequação final à LGPD é jurídica; aqui aponto os sinais técnicos, não substituo a avaliação de um advogado.</li>
       </ul>
     </div>
   </details>
 </section>
 
 <footer>
-  <p><b>Auditoria digital independente: CowPig, Boituva/SP.</b> Feita em 15 de julho de 2026.</p>
-  <p>Documento sem vínculo com a empresa, montado a partir de informação pública e de consultas ao próprio site.</p>
-  <p>Site, Google e registro sanitário mudam. Vale refazer a medição e confirmar o selo antes de investir.</p>
+  <p><b>Análise do site cowpig.com.br.</b> Feita em 15 de julho de 2026, a partir de consultas públicas ao próprio site.</p>
 </footer>
 
 </div>
 
 <script>
 (function () {
-  // escuro e o padrao; o botao so existe para quem quiser claro
   var r = document.documentElement, b = document.getElementById('t'), s = null;
   try { s = localStorage.getItem('tema_v3'); } catch (e) {}
   r.setAttribute('data-theme', s === 'light' ? 'light' : 'dark');
