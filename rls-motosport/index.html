@@ -1,707 +1,860 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Auditoria Digital: RLS Motosport (Boituva/SP)</title>
-<meta name="description" content="Auditoria técnica independente do site rlsmotos.com.br e da presença local da RLS Motosport em Boituva/SP.">
+<meta name="description" content="Diagnóstico independente do site e da presença no Google da RLS Motosport, Boituva/SP.">
 <meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/report.css">
+<style>
+  :root { --accent: #17515f; --accent-ink: #0e3b46; --accent-wash: #e6eff1; }
+  :root[data-theme="dark"] { --accent: #6bb3c4; --accent-wash: #17313a; }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) { --accent: #6bb3c4; --accent-wash: #17313a; }
+  }
+</style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="topbar-in">
-    <div class="brand">Auditoria Digital <span>/ RLS Motosport</span></div>
+    <div class="mark"><i></i>Auditoria Digital <span>/ RLS Motosport</span></div>
     <nav>
-      <a href="#veredito">Veredito</a>
-      <a href="#notas">Notas</a>
-      <a href="#criticos">Achados</a>
-      <a href="#local">Presença local</a>
-      <a href="#concorrencia">Concorrência</a>
-      <a href="#plano">Plano</a>
-      <a href="#metodo">Método</a>
+      <a href="#resumo">Resumo</a>
+      <a href="#google">Veja você mesmo</a>
+      <a href="#problemas">Problemas</a>
+      <a href="#praca">A praça</a>
+      <a href="#plano">O que fazer</a>
+      <a href="#recado">Recado técnico</a>
     </nav>
-    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema">Tema</button>
+    <button class="tbtn" id="t" type="button">Tema</button>
   </div>
 </div>
 
-<div class="wrap">
+<div class="page">
 
-<header class="hero">
-  <div class="eyebrow">Auditoria técnica independente</div>
-  <h1>RLS Motosport</h1>
-  <p class="lede">
-    Revenda de motos seminovas e 0km em Boituva/SP. Este relatório audita o site
-    <strong>rlsmotos.com.br</strong> e a presença da loja na busca local, com base em medições
-    feitas diretamente nos servidores e em registros públicos.
-  </p>
-  <div class="meta-row">
-    <span class="chip">Emitido em 15/07/2026</span>
-    <span class="chip"><a href="https://rlsmotos.com.br/" target="_blank" rel="noopener">rlsmotos.com.br</a></span>
-    <span class="chip">Plataforma: Autoconf</span>
-    <span class="chip">39 motos em estoque</span>
-    <span class="chip">CNPJ 21.532.110/0001-74</span>
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Diagnóstico independente &middot; 15 de julho de 2026</p>
+      <h1>A loja mais elogiada de Boituva está quase invisível no Google.</h1>
+      <p class="lede">
+        Treze clientes escreveram elogios à RLS. Nenhum é de 2024 pra cá. Enquanto isso,
+        cada moto do estoque está sendo anunciada no Google com um erro que faz a loja
+        parecer desleixada. Quase tudo aqui se conserta de graça.
+      </p>
+    </div>
+
+    <div class="gauge">
+      <svg width="168" height="168" viewBox="0 0 168 168" role="img" aria-label="Nota geral 51 de 100">
+        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--surface-sunk)" stroke-width="13"/>
+        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--warn)" stroke-width="13"
+                stroke-dasharray="224 440" stroke-linecap="butt"
+                transform="rotate(-90 84 84)"/>
+        <text x="84" y="88" text-anchor="middle" class="gauge-num">51</text>
+        <text x="84" y="107" text-anchor="middle" class="gauge-den">de 100</text>
+      </svg>
+      <p class="gauge-cap">Nota geral</p>
+    </div>
   </div>
-</header>
 
-<!-- ================= VEREDITO ================= -->
-<section id="veredito">
-  <h2><span class="num">01</span> Veredito</h2>
-  <div class="verdict">
-    <p>
-      <strong>A RLS tem o melhor ativo da praça e o está desperdiçando.</strong> Em 13 avaliações públicas
-      levantadas, 13 são positivas, e o elogio é sempre o mesmo: o atendimento, com vendedores citados
-      pelo nome. Isso é o que a concorrência não consegue copiar. Mas esse ativo está preso em avaliações
-      que parecem paradas desde 2023, num site que o Google não consegue ler direito.
-    </p>
-    <p>
-      O site não está lento nem quebrado. Ele está <strong>mal descrito para o Google</strong>. Três falhas
-      se combinam: cada anúncio de moto é publicado com a palavra <span class="inline-code">portas</span> no
-      título, herdada de um template de carros; o sitemap entrega 182 endereços em
-      <span class="inline-code">http://</span> quando o site inteiro roda em <span class="inline-code">https://</span>;
-      e não há uma única linha de dados estruturados, que é o formato pelo qual o Google entende que ali
-      existe uma loja de motos com endereço, telefone e preços.
-    </p>
-    <p>
-      Nada disso exige trocar de site. São correções de configuração e de template, a maior parte na mão da
-      Autoconf. <strong>A ação de maior retorno não é técnica:</strong> é pedir avaliações novas e responder as
-      antigas. A loja lidera em reputação percebida na cidade e ninguém sabe disso.
+  <dl class="facts">
+    <div class="fact"><dt>Site</dt><dd><a href="https://rlsmotos.com.br/" target="_blank" rel="noopener">rlsmotos.com.br</a></dd></div>
+    <div class="fact"><dt>Estoque</dt><dd>39 motos</dd></div>
+    <div class="fact"><dt>Quem fez o site</dt><dd>Autoconf</dd></div>
+    <div class="fact"><dt>CNPJ</dt><dd>21.532.110/0001-74</dd></div>
+  </dl>
+</section>
+
+<!-- ===================== COMO LER ===================== -->
+<section id="comoler">
+  <div class="col">
+    <p class="eyebrow">Antes de começar</p>
+    <h2>Este relatório é para você ler sozinho</h2>
+    <p class="sec-intro" style="margin-bottom:0">
+      Não tem palavra técnica em lugar nenhum, de propósito. No fim tem um
+      <a href="#recado">recado pronto</a> para você mandar para a empresa que cuida do seu site,
+      sem precisar entender nada do que está escrito lá. Você só copia, cola e manda.
     </p>
   </div>
 </section>
 
-<!-- ================= NOTAS ================= -->
-<section id="notas">
-  <h2><span class="num">02</span> Notas por dimensão</h2>
-  <p class="sec-lede">
-    Cada nota é a porcentagem de itens aprovados numa checagem objetiva, feita item a item contra o
-    servidor. A régua completa e os itens estão na <a href="#metodo">seção de método</a>, para que qualquer
-    pessoa possa reproduzir.
-  </p>
-
-  <div class="score-hero">
-    <div class="score-figure">
-      <div class="score-value">51<span class="score-den">/100</span></div>
-      <div class="score-label">Índice geral</div>
-      <div style="margin-top:10px">
-        <span class="pill pill-serious">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-          Requer atenção
-        </span>
-      </div>
-    </div>
-
-    <div class="meters">
-      <div class="meter-row">
-        <div class="meter-head">
-          <span class="meter-name">SEO técnico</span>
-          <span class="meter-num">56/100</span>
-        </div>
-        <div class="meter-track"><div class="meter-fill" style="width:56%;background:var(--serious)"></div></div>
-        <div class="meter-note">Base sólida (title, robots, sitemap), mas sem H1 real, sem dados estruturados e com sitemap fora do padrão.</div>
-      </div>
-      <div class="meter-row">
-        <div class="meter-head">
-          <span class="meter-name">Performance</span>
-          <span class="meter-num">57/100</span>
-        </div>
-        <div class="meter-track"><div class="meter-fill" style="width:57%;background:var(--serious)"></div></div>
-        <div class="meter-note">Resposta rápida (0,66 s) e CDN ativo, mas cache desligado e imagens sem otimização.</div>
-      </div>
-      <div class="meter-row">
-        <div class="meter-head">
-          <span class="meter-name">Presença local</span>
-          <span class="meter-num">50/100</span>
-        </div>
-        <div class="meter-track"><div class="meter-fill" style="width:50%;background:var(--serious)"></div></div>
-        <div class="meter-note">Perfil no Google existe e os horários batem, mas o cadastro tem 6 nomes e 4 telefones diferentes.</div>
-      </div>
-      <div class="meter-row">
-        <div class="meter-head">
-          <span class="meter-name">Segurança (cabeçalhos)</span>
-          <span class="meter-num">38/100</span>
-        </div>
-        <div class="meter-track"><div class="meter-fill" style="width:38%;background:var(--critical)"></div></div>
-        <div class="meter-note">Certificado válido, mas nenhum cabeçalho de proteção e a versão do PHP está exposta.</div>
-      </div>
-    </div>
+<!-- ===================== RESUMO ===================== -->
+<section id="resumo">
+  <div class="col">
+    <p class="eyebrow">Em 30 segundos</p>
+    <h2>Três coisas que você precisa saber</h2>
+    <p class="sec-intro">Se você parar de ler aqui, já saiu no lucro.</p>
   </div>
 
-  <h3>Números que resumem a auditoria</h3>
-  <div class="kpis">
-    <div class="kpi">
-      <div class="kpi-label">Anúncios com erro no título</div>
-      <div class="kpi-value" style="color:var(--critical-ink)">100%</div>
-      <div class="kpi-sub">8 de 8 motos testadas trazem "portas" no título</div>
+  <div class="tldr">
+    <div class="tldr-item">
+      <div class="tldr-n">1</div>
+      <div>
+        <h3>Suas motos estão sendo anunciadas com a palavra "portas"</h3>
+        <p>
+          Abri oito anúncios do seu estoque no Google. Nos oito aparece escrito, por exemplo,
+          "HONDA BIZ 125 Flex Flex portas, câmbio Manual". Moto não tem porta. Quem procura moto em
+          Boituva lê isso antes de conhecer sua loja.
+        </p>
+      </div>
     </div>
-    <div class="kpi">
-      <div class="kpi-label">Sitemap fora do padrão</div>
-      <div class="kpi-value" style="color:var(--critical-ink)">182<span style="font-size:16px;color:var(--text-muted)">/182</span></div>
-      <div class="kpi-sub">Endereços em http, todos redirecionados</div>
+    <div class="tldr-item">
+      <div class="tldr-n">2</div>
+      <div>
+        <h3>Seu maior trunfo está trancado na gaveta</h3>
+        <p>
+          Treze avaliações, todas boas, nenhuma reclamação. Os clientes elogiam o Arnaldo, o Alberto e
+          o Rafael pelo nome. Isso concorrente nenhum copia. Só que a última é de outubro de 2023, e
+          você nunca respondeu nenhuma.
+        </p>
+      </div>
     </div>
-    <div class="kpi">
-      <div class="kpi-label">Dados estruturados</div>
-      <div class="kpi-value" style="color:var(--critical-ink)">0</div>
-      <div class="kpi-sub">Nenhum bloco JSON-LD no site inteiro</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-label">Avaliações públicas</div>
-      <div class="kpi-value" style="color:var(--good-ink)">13<span style="font-size:16px;color:var(--text-muted)">/13</span></div>
-      <div class="kpi-sub">Positivas, mas a última é de outubro de 2023</div>
+    <div class="tldr-item">
+      <div class="tldr-n">3</div>
+      <div>
+        <h3>Ninguém em Boituva levou a internet a sério ainda</h3>
+        <p>
+          A loja mais bem avaliada da cidade não tem nem site. Sua concorrente direta tem mais motos
+          que você, mas é bem pior avaliada. E três cidades vizinhas não têm nenhuma revenda de usadas.
+          A porta está aberta.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= ACHADOS ================= -->
-<section id="criticos">
-  <h2><span class="num">03</span> Achados, do mais grave ao menor</h2>
-  <p class="sec-lede">
-    Cada achado traz a evidência exata capturada do servidor em 15/07/2026, para que a Autoconf possa
-    reproduzir e corrigir sem discussão.
-  </p>
+<!-- ===================== VEJA VOCÊ MESMO ===================== -->
+<section id="google">
+  <div class="col">
+    <p class="eyebrow">Veja com seus próprios olhos</p>
+    <h2>É assim que sua moto aparece hoje</h2>
+    <p class="sec-intro">
+      Isto não é exemplo inventado. É o texto de verdade, que seu site está mandando para o Google
+      neste momento. Compare os dois lados.
+    </p>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <p class="serp-tag">Como está hoje</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">R</span> rlsmotos.com.br &rsaquo; motos &rsaquo; honda</div>
+        <div class="serp-title">HONDA BIZ 125/125i Flex Flex <mark>portas</mark>, câmbio Manual em Boituva</div>
+        <div class="serp-desc">Confira esta Honda Biz na RLS Motosport, revenda de motos seminovas em Boituva e região.</div>
+      </div>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">R</span> rlsmotos.com.br &rsaquo; motos &rsaquo; honda</div>
+        <div class="serp-title">HONDA XRE 190/ <mark>Flex Flex</mark> <mark>portas</mark>, câmbio Manual em Boituva</div>
+        <div class="serp-desc">Confira esta Honda XRE na RLS Motosport, revenda de motos seminovas em Boituva e região.</div>
+      </div>
+      <p class="src" style="margin-top:10px">Sem preço. Sem ano. Com uma palavra que não faz sentido.</p>
+    </div>
+    <div>
+      <p class="serp-tag">Como poderia aparecer</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">R</span> rlsmotos.com.br &rsaquo; motos &rsaquo; honda</div>
+        <div class="serp-title">Honda Biz 125 Flex 2016 &middot; R$ 11.900 &middot; RLS Motosport Boituva</div>
+        <div class="serp-desc">Biz 125 Flex 2016, 32.000 km, documentação em dia. Financiamento em até 48x. Avaliamos sua moto na troca.</div>
+      </div>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">R</span> rlsmotos.com.br &rsaquo; motos &rsaquo; honda</div>
+        <div class="serp-title">Honda XRE 190 2023 &middot; R$ 17.990 &middot; RLS Motosport Boituva</div>
+        <div class="serp-desc">XRE 190 2023, seminova, único dono. Financiamento em até 48x. Avaliamos sua moto na troca.</div>
+      </div>
+      <p class="src" style="margin-top:10px">Com preço e ano na cara do cliente, antes mesmo do clique.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROBLEMAS ===================== -->
+<section id="problemas">
+  <div class="col">
+    <p class="eyebrow">Os problemas, do pior para o menor</p>
+    <h2>O que está travando a loja</h2>
+    <p class="sec-intro">
+      Cada ficha responde três perguntas, sempre na mesma ordem: o que está acontecendo,
+      o que isso te custa, e quem resolve.
+    </p>
+  </div>
 
   <!-- 1 -->
-  <div class="finding">
-    <div class="finding-head">
-      <h3 class="finding-title">1. Toda moto é anunciada no Google com a palavra "portas"</h3>
-      <span class="pill pill-critical">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-        Crítico
-      </span>
+  <article class="issue">
+    <div class="issue-top">
+      <div class="issue-rank">1</div>
+      <div class="issue-head">
+        <h3>Toda moto é anunciada com a palavra "portas"</h3>
+        <div class="issue-meta">
+          <span class="sev sev-crit">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+            Grave
+          </span>
+          <span class="sev sev-flat">8 de 8 anúncios que testei</span>
+        </div>
+      </div>
     </div>
-    <p>
-      O título é a linha azul que o cliente lê no Google e é o principal fator de clique. Em todas as 8 páginas
-      de moto que testei, o título traz <strong>"portas"</strong>, um campo de carro que ficou no template, e
-      <strong>"Flex Flex"</strong> repetido. Uma moto não tem portas. Quem procura "Honda Biz em Boituva" vê um
-      anúncio que parece defeituoso, e isso derruba o clique e a confiança antes mesmo da visita.
-    </p>
-    <div class="evidence">HONDA BIZ 125/125i Flex Flex  <span class="hl">portas</span>, câmbio Manual em Boituva - RLS MOTOSPORT
-HONDA ADV 150 Gasolina  <span class="hl">portas</span>, câmbio Automático em Boituva - RLS MOTOSPORT
-HONDA CB 300F Twister <span class="hl">Flex Flex</span>  <span class="hl">portas</span>, câmbio Manual em Boituva - RLS MOTOSPORT
-HAOJUE DK 150 Gasolina  <span class="hl">portas</span>, câmbio Manual em Boituva - RLS MOTOSPORT
-HONDA PCX 150/DLX Gasolina  <span class="hl">portas</span>, câmbio Automático em Boituva - RLS MOTOSPORT
-HONDA XRE 190/ <span class="hl">Flex Flex</span>  <span class="hl">portas</span>, câmbio Manual em Boituva - RLS MOTOSPORT
-HONDA POP 110i Gasolina  <span class="hl">portas</span>, câmbio Manual em Boituva - RLS MOTOSPORT</div>
-    <p class="src">Medição: requisição direta a 8 URLs de <code>rlsmotos.com.br/motos/…</code> em 15/07/2026.</p>
-    <div class="fix">
-      <b>Correção:</b> é um ajuste no template da Autoconf, não no conteúdo da loja. O campo "portas" deve ser
-      suprimido para a categoria moto, e o "Flex" não deve ser concatenado duas vezes. Um chamado resolve para
-      todos os 133 anúncios de uma vez. <b>Esforço baixo, impacto alto.</b>
+
+    <div class="band">
+      <p class="band-label">O que está acontecendo</p>
+      <p>
+        O sistema que monta seu site foi feito para loja de carro. Na hora de escrever o nome do anúncio,
+        ele enfia a palavra "portas" mesmo quando o veículo é moto, e ainda repete "Flex" duas vezes.
+        Ninguém da sua equipe digitou isso. É o sistema fazendo sozinho, em todos os anúncios.
+      </p>
+      <div class="ev">HONDA BIZ 125/125i Flex Flex  <b>portas</b>, câmbio Manual em Boituva
+HONDA ADV 150 Gasolina  <b>portas</b>, câmbio Automático em Boituva
+HONDA CB 300F Twister <b>Flex Flex</b>  <b>portas</b>, câmbio Manual em Boituva
+HAOJUE DK 150 Gasolina  <b>portas</b>, câmbio Manual em Boituva
+HONDA PCX 150/DLX Gasolina  <b>portas</b>, câmbio Automático em Boituva
+HONDA XRE 190/ <b>Flex Flex</b>  <b>portas</b>, câmbio Manual em Boituva
+HONDA POP 110i Gasolina  <b>portas</b>, câmbio Manual em Boituva</div>
+      <p class="src">Copiado do seu site em 15/07/2026, em 8 páginas diferentes.</p>
     </div>
-  </div>
+
+    <div class="band band-cost">
+      <p class="band-label">O que isso te custa</p>
+      <p>
+        Aquela linha azul é a primeira coisa que o cliente lê, e é ela que decide se ele clica em você ou
+        no concorrente. Um anúncio dizendo que uma Biz tem portas passa a impressão de loja desatenta,
+        bem na hora em que ele está comparando. São <strong>133 anúncios</strong> com o mesmo defeito,
+        todos no ar agora.
+      </p>
+    </div>
+
+    <div class="band band-fix">
+      <p class="band-label">Quem resolve</p>
+      <p>
+        Não é problema seu, é de quem fez o site. É um ajuste no sistema deles que arruma os 133 anúncios
+        de uma vez só. <strong>Não custa nada para a loja.</strong> Está no
+        <a href="#recado">recado pronto</a>, item 1.
+      </p>
+    </div>
+  </article>
 
   <!-- 2 -->
-  <div class="finding">
-    <div class="finding-head">
-      <h3 class="finding-title">2. O site não diz ao Google que é uma loja de motos</h3>
-      <span class="pill pill-critical">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-        Crítico
-      </span>
+  <article class="issue">
+    <div class="issue-top">
+      <div class="issue-rank">2</div>
+      <div class="issue-head">
+        <h3>Suas motos estão na vitrine sem etiqueta de preço</h3>
+        <div class="issue-meta">
+          <span class="sev sev-crit">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+            Grave
+          </span>
+        </div>
+      </div>
     </div>
-    <p>
-      Dados estruturados são um trecho invisível de código que informa ao Google, sem ambiguidade, que aquela
-      página é uma <strong>loja com endereço e telefone</strong> e que aquele anúncio é um
-      <strong>veículo com preço, ano e quilometragem</strong>. É o que faz aparecer preço e estrelas direto no
-      resultado de busca. O site tem <strong>zero</strong> em todas as páginas testadas.
-    </p>
-    <div class="evidence">Busca por 'application/ld+json' (dados estruturados):
 
-  home .................... <span class="hl">0 ocorrências</span>
-  /estoque ................ <span class="hl">0 ocorrências</span>
-  página de moto .......... <span class="hl">0 ocorrências</span>
-
-Esperado para uma revenda: AutoDealer + LocalBusiness na home,
-                           Vehicle/Product + Offer em cada anúncio.</div>
-    <p>
-      O efeito prático: os concorrentes que preencherem isso ganham o espaço com preço visível no resultado, e a
-      RLS aparece como um link comum. Para uma loja física, cujo cliente busca no celular perto de casa, esse é o
-      campo que mais rende.
-    </p>
-    <div class="fix">
-      <b>Correção:</b> pedir à Autoconf a inclusão de <code>AutoDealer</code> com endereço e telefone na home, e
-      <code>Vehicle</code> com <code>Offer</code> (preço, ano, km) em cada anúncio. É recurso padrão de
-      plataforma automotiva. <b>Esforço baixo (fornecedor), impacto alto.</b>
+    <div class="band">
+      <p class="band-label">O que está acontecendo</p>
+      <p>
+        Repare, na comparação lá em cima, que o lado direito mostra o preço e o ano direto no Google.
+        Isso não é sorte nem sorte de quem paga mais: o site precisa mandar essas informações para o
+        Google de um jeito que ele entenda, como quem preenche uma ficha. É a mesma coisa que pôr a
+        etiqueta na moto da vitrine.
+      </p>
+      <p>
+        O seu site <strong>não manda essa ficha</strong>. Nem na página inicial, que deveria dizer
+        "aqui é uma revenda de motos, fica neste endereço, atende neste telefone e neste horário",
+        nem nas páginas de cada moto, que deveriam dizer o preço, o ano e a quilometragem.
+      </p>
     </div>
-  </div>
+
+    <div class="band band-cost">
+      <p class="band-label">O que isso te custa</p>
+      <p>
+        Seu anúncio sai como um link seco, enquanto o do concorrente que preencher a ficha sai com preço
+        e foto, ocupando o dobro do espaço na tela do celular. É a diferença entre a moto com etiqueta e a
+        moto atrás do vidro embaçado: o cliente vê as duas, mas só uma dá vontade de entrar. Para loja de
+        rua, cujo cliente pesquisa no celular a poucos quilômetros, é o que mais rende.
+      </p>
+    </div>
+
+    <div class="band band-fix">
+      <p class="band-label">Quem resolve</p>
+      <p>
+        Também é de quem fez o site, e é coisa que todo sistema de loja de veículo já tem pronto.
+        Está no <a href="#recado">recado pronto</a>, item 2.
+      </p>
+    </div>
+  </article>
 
   <!-- 3 -->
-  <div class="finding">
-    <div class="finding-head">
-      <h3 class="finding-title">3. O sitemap entrega 182 endereços errados ao Google</h3>
-      <span class="pill pill-serious">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-        Sério
-      </span>
+  <article class="issue">
+    <div class="issue-top">
+      <div class="issue-rank">3</div>
+      <div class="issue-head">
+        <h3>Você dá ao Google uma lista com o endereço errado, 182 vezes</h3>
+        <div class="issue-meta">
+          <span class="sev sev-warn">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+            Sério
+          </span>
+        </div>
+      </div>
     </div>
-    <p>
-      O sitemap é a lista que a loja entrega ao Google dizendo "estas são as minhas páginas". Todas as 182 estão
-      escritas em <span class="inline-code">http://</span>, mas o site responde em
-      <span class="inline-code">https://</span>. Ou seja, a loja entrega uma lista de endereços que ela mesma
-      redireciona. O Google chega, é desviado, e gasta em desvio o tempo que gastaria lendo anúncio novo.
-    </p>
-    <div class="evidence">Sitemap: https://rlsmotos.com.br/sitemap.xml
 
-  endereços em https:// ......... <span class="ok">0</span>
-  endereços em http:// .......... <span class="hl">182</span>   ← todos redirecionam
-
-Teste: http://rlsmotos.com.br/estoque
-       → <span class="hl">301</span> → https://rlsmotos.com.br/estoque</div>
-    <p>
-      Há um agravante. <strong>42 dos 182 são páginas de filtro</strong>, do tipo
-      <span class="inline-code">/estoque?marca=honda-1</span>, e cada uma se declara original em vez de apontar
-      para <span class="inline-code">/estoque</span>. São dezenas de páginas quase idênticas disputando entre si
-      a mesma busca, o que dilui a força de todas.
-    </p>
-    <div class="fix">
-      <b>Correção:</b> regerar o sitemap em https e retirar as URLs com <code>?</code>. As páginas de filtro devem
-      apontar para <code>/estoque</code> como original. <b>Esforço baixo, impacto médio-alto.</b>
+    <div class="band">
+      <p class="band-label">O que está acontecendo</p>
+      <p>
+        Todo site entrega ao Google uma lista das próprias páginas, tipo um índice: <em>"olha, é aqui
+        que estão minhas motos"</em>. É como dar ao carteiro a lista de endereços da sua loja.
+      </p>
+      <p>
+        Só que a sua lista tem <strong>o endereço antigo em todas as 182 linhas</strong>. O Google vai lá,
+        bate na porta, não é ali, e alguém precisa mandar ele para o endereço certo. Ele faz isso 182 vezes,
+        toda vez que passa. O tempo que ele gastaria olhando moto nova, ele gasta sendo redirecionado.
+      </p>
     </div>
-  </div>
+
+    <div class="band band-cost">
+      <p class="band-label">O que isso te custa</p>
+      <p>
+        Moto nova no estoque demora mais para aparecer na busca. E tem um agravante: <strong>42 dessas
+        linhas são páginas de filtro</strong>, aquelas de "só Honda", "só Yamaha". Cada uma se apresenta ao
+        Google como se fosse a página principal, e todas brigam entre si pela mesma pesquisa. Em vez de uma
+        página forte, você tem quarenta e duas fracas.
+      </p>
+    </div>
+
+    <div class="band band-fix">
+      <p class="band-label">Quem resolve</p>
+      <p>
+        Quem fez o site, de novo. <a href="#recado">Recado pronto</a>, item 3.
+      </p>
+    </div>
+  </article>
 
   <!-- 4 -->
-  <div class="finding">
-    <div class="finding-head">
-      <h3 class="finding-title">4. O título principal da home é a logomarca</h3>
-      <span class="pill pill-serious">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-        Sério
-      </span>
+  <article class="issue">
+    <div class="issue-top">
+      <div class="issue-rank">4</div>
+      <div class="issue-head">
+        <h3>A placa da sua loja na internet só tem o seu nome</h3>
+        <div class="issue-meta">
+          <span class="sev sev-warn">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+            Sério
+          </span>
+        </div>
+      </div>
     </div>
-    <p>
-      O H1 é o título mais forte de uma página, o equivalente à manchete. Na home da RLS ele contém apenas a
-      imagem do logo. A manchete da loja, para o Google, é a palavra "RLS Motosport", que só quem já conhece a
-      loja digita. A frase que o cliente realmente busca, <em>motos usadas em Boituva</em>, não está lá.
-    </p>
-    <div class="evidence">&lt;h1&gt;
-    &lt;a class="text-hide logo" href="https://rlsmotos.com.br"&gt;
-        &lt;img src="…/logo.png" alt="RLS MOTOSPORT"&gt;   ← <span class="hl">o H1 é só o logo</span>
-    &lt;/a&gt;
-&lt;/h1&gt;</div>
-    <div class="fix">
-      <b>Correção:</b> o logo é um link, não uma manchete. O H1 deve carregar a frase de busca, por exemplo
-      <em>"Motos usadas e seminovas em Boituva"</em>. <b>Esforço baixo, impacto médio.</b>
+
+    <div class="band">
+      <p class="band-label">O que está acontecendo</p>
+      <p>
+        Toda página tem um letreiro principal, que para o Google é o assunto do lugar. É a placa da loja.
+        Na sua página inicial, essa placa é só a sua logomarca, ou seja, ela diz "RLS Motosport" e mais nada.
+      </p>
+      <p>
+        O problema: quem digita "RLS Motosport" no Google já te conhece. Quem <strong>ainda não te
+        conhece</strong> digita "moto usada em Boituva", e essa frase não está na sua placa.
+      </p>
     </div>
-  </div>
+
+    <div class="band band-cost">
+      <p class="band-label">O que isso te custa</p>
+      <p>
+        Você aparece bem para quem já é seu cliente e mal para quem ainda não é, que é exatamente
+        quem você precisa alcançar para crescer.
+      </p>
+    </div>
+
+    <div class="band band-fix">
+      <p class="band-label">Quem resolve</p>
+      <p>
+        Quem fez o site. É trocar a placa por algo como <em>"Motos usadas e seminovas em Boituva"</em>.
+        <a href="#recado">Recado pronto</a>, item 4.
+      </p>
+    </div>
+  </article>
 
   <!-- 5 -->
-  <div class="finding">
-    <div class="finding-head">
-      <h3 class="finding-title">5. Cache desligado e imagens pesadas</h3>
-      <span class="pill pill-warning">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
-        Atenção
-      </span>
+  <article class="issue">
+    <div class="issue-top">
+      <div class="issue-rank">5</div>
+      <div class="issue-head">
+        <h3>Quem volta ao seu site baixa tudo de novo, do zero</h3>
+        <div class="issue-meta">
+          <span class="sev sev-warn">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+            Atenção
+          </span>
+        </div>
+      </div>
     </div>
-    <p>
-      O servidor responde rápido, em 0,66 s, e usa CDN. O problema está no que vem depois: o site manda o
-      navegador <strong>não guardar nada em cache</strong>, então quem volta baixa tudo de novo. Some-se a isso
-      um PNG de 244 KB e apenas 5 das 23 imagens com carregamento adiantado. Em 4G no bairro, isso é o cliente
-      esperando o que já deveria estar na memória.
-    </p>
-    <div class="evidence">Cache-Control: <span class="hl">no-cache, private</span>   ← nada é reaproveitado
-X-Powered-By: <span class="hl">PHP/8.2.27</span>          ← versão exposta sem necessidade
-Via: CloudFront                       <span class="ok">← CDN ativo, bom</span>
 
-Tempo até o 1º byte ..... 0,66 s   <span class="ok">bom</span>
-HTML .................... 48 KB    <span class="ok">bom</span>
-Maior imagem ............ <span class="hl">244 KB (PNG)</span>
-Imagens com lazy ........ <span class="hl">5 de 23</span>
-Imagens com alt ......... <span class="hl">15 de 23</span></div>
-    <div class="fix">
-      <b>Correção:</b> ativar cache para imagens e arquivos estáticos, converter as imagens grandes para WebP e
-      ligar o carregamento adiantado no restante. <b>Esforço baixo (fornecedor), impacto médio.</b>
+    <div class="band">
+      <p class="band-label">O que está acontecendo</p>
+      <p>
+        Boa notícia primeiro: seu site é rápido para abrir. O problema é outro. Normalmente o celular
+        guarda as fotos do site na memória, para não precisar baixar tudo de novo na próxima visita.
+        O seu site <strong>proíbe o celular de guardar</strong>. Então o cliente que volta amanhã baixa
+        tudo outra vez, como se fosse a primeira vez. Ainda tem fotos pesadas demais e mal preparadas.
+      </p>
     </div>
+
+    <div class="band band-cost">
+      <p class="band-label">O que isso te custa</p>
+      <p>
+        No sinal fraco do bairro, o cliente fica esperando de novo o que já deveria estar no aparelho dele.
+        Cliente esperando é cliente que volta para o Google e clica em outro.
+      </p>
+      <p>
+        Aproveito para registrar uma coisa aqui: seu site tem formulário para o cliente pedir avaliação
+        da moto, então ele <strong>recebe dado pessoal de gente de verdade</strong>, e está sem as
+        proteções básicas que se espera nesse caso.
+      </p>
+    </div>
+
+    <div class="band band-fix">
+      <p class="band-label">Quem resolve</p>
+      <p>
+        Quem fez o site. <a href="#recado">Recado pronto</a>, itens 5 e 6.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- ===================== NOTAS ===================== -->
+<section id="notas">
+  <div class="col">
+    <p class="eyebrow">De onde saiu a nota 51</p>
+    <h2>A régua, aberta</h2>
+    <p class="sec-intro">
+      Não é opinião. Conferi uma lista de itens, um por um, direto no seu site. A nota é simplesmente
+      quantos por cento desses itens passaram.
+    </p>
   </div>
 
-  <!-- 6 -->
-  <div class="finding">
-    <div class="finding-head">
-      <h3 class="finding-title">6. Nenhum cabeçalho de proteção configurado</h3>
-      <span class="pill pill-warning">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
-        Atenção
-      </span>
+  <div class="col bars">
+    <div>
+      <div class="bar-hd"><span class="bar-name">O quanto o Google entende seu site</span><span class="bar-val">56 / 100</span></div>
+      <div class="bar-track"><span class="bar-fill" style="width:56%;background:var(--warn)"></span></div>
+      <p class="bar-note">O básico existe. Faltam a placa, a etiqueta de preço e a lista de endereços certa.</p>
     </div>
-    <p>
-      O certificado é válido e o site força https, o que está correto. Faltam as proteções complementares. Não é
-      urgente para uma vitrine que não processa pagamento, mas o site tem formulário de avaliação de moto, ou
-      seja, <strong>recebe dado pessoal</strong>, e isso já pede o básico.
-    </p>
-    <div class="evidence">Strict-Transport-Security ..... <span class="hl">ausente</span>
-Content-Security-Policy ....... <span class="hl">ausente</span>
-X-Frame-Options ............... <span class="hl">ausente</span>
-X-Content-Type-Options ........ <span class="hl">ausente</span>
-Certificado ................... <span class="ok">Amazon RSA, válido até 25/12/2026</span>
-HTTP → HTTPS .................. <span class="ok">301, correto</span></div>
-    <div class="fix">
-      <b>Correção:</b> pedir à Autoconf a inclusão dos quatro cabeçalhos e a remoção do
-      <code>X-Powered-By</code>. É configuração de servidor. <b>Esforço baixo, impacto baixo-médio.</b>
+    <div>
+      <div class="bar-hd"><span class="bar-name">Velocidade</span><span class="bar-val">57 / 100</span></div>
+      <div class="bar-track"><span class="bar-fill" style="width:57%;background:var(--warn)"></span></div>
+      <p class="bar-note">Abre rápido, mas obriga o cliente a baixar tudo de novo e tem foto pesada.</p>
+    </div>
+    <div>
+      <div class="bar-hd"><span class="bar-name">Sua presença no mapa e sua fama</span><span class="bar-val">50 / 100</span></div>
+      <div class="bar-track"><span class="bar-fill" style="width:50%;background:var(--warn)"></span></div>
+      <p class="bar-note">O perfil existe e o horário está certo, mas seu cadastro tem 6 nomes e 4 telefones.</p>
+    </div>
+    <div>
+      <div class="bar-hd"><span class="bar-name">Proteção</span><span class="bar-val">38 / 100</span></div>
+      <div class="bar-track"><span class="bar-fill" style="width:38%;background:var(--crit)"></span></div>
+      <p class="bar-note">O cadeado do navegador está lá, mas nada além dele foi configurado.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= PRESENÇA LOCAL ================= -->
-<section id="local">
-  <h2><span class="num">04</span> Presença local e reputação</h2>
-  <p class="sec-lede">
-    Para uma revenda de bairro, isto vale mais que o site. É o que aparece quando alguém pesquisa
-    "moto usada perto de mim" no celular.
-  </p>
+<!-- ===================== MAPA / FAMA ===================== -->
+<section id="mapa">
+  <div class="col">
+    <p class="eyebrow">Sua fama e seu cadastro</p>
+    <h2>O que aparece quando alguém procura "moto usada perto de mim"</h2>
+  </div>
 
-  <div class="callout critical">
-    <h4>
-      <span class="pill pill-critical">
+  <div class="note note-crit">
+    <div class="note-hd">
+      <span class="sev sev-crit">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-        Corrigir antes de tudo
+        Cuidado com isto
       </span>
-      O CNPJ que circula associado à RLS em sites de consulta é de outra empresa
-    </h4>
+      <h3>Tem um CNPJ que não é o seu circulando no seu nome</h3>
+    </div>
     <p>
-      O <span class="inline-code">cnpj.biz</span> associa ao nome "RLS Motos" o CNPJ
-      <strong>39.873.871/0001-55</strong>. Consultando a Receita Federal, esse CNPJ é a
-      <strong>RLS Comércio de Motos e Peças Ltda, de Marechal Deodoro, Alagoas</strong>, e está
-      <strong>baixada desde 09/06/2026</strong>. Não é a loja de Boituva.
+      Sites de consulta de empresa mostram, no nome "RLS Motos", o CNPJ
+      <strong>39.873.871/0001-55</strong>. Fui conferir na Receita Federal: esse CNPJ é de uma
+      <strong>empresa de Alagoas, e ela está fechada desde junho deste ano</strong>. Não é você. É outra
+      empresa, de outro estado, com nome parecido.
     </p>
     <p>
-      O CNPJ correto da RLS Motosport é <strong>21.532.110/0001-74</strong>, ativo, micro empresa, aberto em
-      08/12/2014, no endereço da loja. Qualquer verificação de perfil no Google, contrato ou emissão feita com o
-      número errado falha ou trava sem explicação aparente.
+      O seu é <strong>21.532.110/0001-74</strong>, ativo, aberto em dezembro de 2014, no endereço da loja.
+      Isso importa na prática: se alguém tentar confirmar sua loja no Google, fechar um contrato ou emitir
+      alguma coisa usando o número errado, vai dar erro e ninguém vai entender o porquê. Vale checar onde
+      esse número errado está publicado.
     </p>
-    <p class="src">
-      Conferido na base da Receita Federal via BrasilAPI, os dois CNPJs, em 15/07/2026.
+    <p class="src">Conferido na Receita Federal, os dois CNPJs, em 15/07/2026.</p>
+  </div>
+
+  <div class="col">
+    <h3>O trunfo que concorrente nenhum copia</h3>
+    <p>
+      Treze avaliações públicas, <strong>treze boas, nenhuma reclamação</strong>. E todas falam da mesma
+      coisa: o atendimento, com gente citada pelo nome. A Priscila elogiou o Alberto e o Rafael. O Israel
+      escreveu que <em>"o Arnaldo é vendedor top"</em>. O Alexssandro contou que fez
+      <em>"todo o processo de compra pela internet"</em> e retirou a moto no dia seguinte, o que mostra
+      que você já vende à distância mesmo sem o site ajudar.
+    </p>
+    <p>
+      O problema é a data: <strong>a última é de 30 de outubro de 2023</strong>. Uma loja com elogios
+      parados há quase três anos passa a impressão de "já foi boa", não de "está bombando". E ninguém
+      respondeu nenhuma das treze.
     </p>
   </div>
 
-  <h3>O ativo real da loja: o atendimento</h3>
-  <p>
-    Em 13 avaliações públicas recuperadas, <strong>13 são positivas e nenhuma é reclamação</strong>. O padrão é
-    consistente e nomeia pessoas: <strong>Arnaldo, Alberto e Rafael</strong> aparecem repetidamente. Uma cliente
-    escreveu que fez <em>"todo o processo de compra pela internet"</em> e retirou no dia seguinte, o que mostra
-    que a loja já vende à distância mesmo sem o site estar preparado para isso.
-  </p>
-  <p>
-    O problema é a data. <strong>A última avaliação encontrada é de 30/10/2023.</strong> Uma reputação parada há
-    quase três anos comunica "loja que já foi boa", não "loja movimentada". E o Google trata avaliação recente
-    como sinal de negócio ativo.
-  </p>
-
-  <div class="callout">
-    <h4>
-      <span class="pill pill-neutral">
+  <div class="note">
+    <div class="note-hd">
+      <span class="sev sev-flat">
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm.75 9.75h-1.5v-4.5h1.5v4.5zm0-6h-1.5v-1.5h1.5v1.5z"/></svg>
-        Lacuna declarada
+        O que eu não consegui descobrir
       </span>
-      A nota em estrelas do Google não pôde ser verificada
-    </h4>
+      <h3>Sua nota em estrelas no Google</h3>
+    </div>
     <p>
-      Tentei o Google Maps e mais nove fontes que costumam espelhar essa nota. Nenhuma trouxe as estrelas.
-      Registro isso como lacuna em vez de estimar um número. <strong>É uma consulta manual de dois minutos</strong>
-      no perfil da loja, e deve ser feita antes de decidir a meta de avaliações.
+      Tentei no Google Maps e em mais nove sites que costumam copiar essa nota. Nenhum mostrou as estrelas.
+      Prefiro dizer que não achei a chutar um número. <strong>São dois minutos abrindo seu próprio
+      perfil no celular</strong>, e é a primeira coisa a fazer.
     </p>
     <p>
-      O que existe: o perfil está confirmado no Google (identificador
-      <span class="inline-code">ChIJ_UPMheDjxZQRCCiv1BowGm0</span>), com categoria principal de revenda de motos e
-      horários corretos. O ConsertaBrasil dá <strong>9,7</strong> à loja, em escala de 0 a 10 e metodologia não
-      declarada, colocando-a em 2º de 13 em Boituva. Não é a nota do Google e não deve ser apresentada como tal.
+      O que dá para afirmar: seu perfil existe, está confirmado no Google, e o horário está certo. Um site
+      chamado ConsertaBrasil te dá <strong>9,7</strong>, mas numa escala de 0 a 10 e sem explicar como
+      calculou. Não é a nota do Google, e não vale divulgar como se fosse.
     </p>
   </div>
 
-  <h3>Cadastro inconsistente: 6 nomes, 4 telefones, 2 e-mails</h3>
-  <p>
-    O Google cruza nome, endereço e telefone entre fontes para confiar num negócio. Quando divergem, ele hesita, e
-    hesitação custa posição no mapa. O endereço está correto em todas as fontes. O resto, não.
-  </p>
+  <div class="col">
+    <h3>Seu cadastro está com seis nomes e quatro telefones</h3>
+    <p>
+      O Google compara seu nome, endereço e telefone em vários sites para decidir se confia na sua loja.
+      Quando ele acha informação diferente em cada lugar, fica na dúvida, e dúvida te joga para baixo no mapa.
+      Seu endereço está certo em todo lugar. O resto, não.
+    </p>
+  </div>
 
-  <div class="table-scroll">
+  <div class="tbl-wrap">
     <table>
       <thead>
-        <tr><th>Campo</th><th>Variações encontradas</th><th>Situação</th></tr>
+        <tr><th>Dado</th><th>O que está espalhado por aí</th><th>Situação</th></tr>
       </thead>
       <tbody>
         <tr>
           <td><b>Nome</b></td>
-          <td>RLS MOTOSPORT · RLS MotoSport · Rls Motos Boituva · RLSMotoSport Multimarcas · RLSMOTOSPORT · Rlsmotosport Comercio de Motocicleta Ltda</td>
-          <td><span class="pill pill-serious"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>6 variantes</span></td>
+          <td>RLS MOTOSPORT &middot; RLS MotoSport &middot; Rls Motos Boituva &middot; RLSMotoSport Multimarcas &middot; RLSMOTOSPORT &middot; Rlsmotosport Comercio de Motocicleta Ltda</td>
+          <td><span class="sev sev-warn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>6 versões</span></td>
         </tr>
         <tr>
           <td><b>Endereço</b></td>
-          <td>Rua Manoel dos Santos Freire, 422, Centro, Boituva/SP, 18550-073</td>
-          <td><span class="pill pill-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Consistente</span></td>
+          <td>Rua Manoel dos Santos Freire, 422, Centro, 18550-073</td>
+          <td><span class="sev sev-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Certo</span></td>
         </tr>
         <tr>
           <td><b>Telefone</b></td>
-          <td>(15) 3316-5782 fixo · (15) 98130-2850 WhatsApp · <b>(15) 81195161 inválido</b> · sem telefone no Solutudo</td>
-          <td><span class="pill pill-critical"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>1 é inválido</span></td>
+          <td>(15) 3316-5782 fixo &middot; (15) 98130-2850 WhatsApp &middot; <b>(15) 81195161, que nem completa a ligação</b> &middot; e um site sem telefone nenhum</td>
+          <td><span class="sev sev-crit"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>1 não funciona</span></td>
         </tr>
         <tr>
           <td><b>E-mail</b></td>
-          <td>RlsMotosport@gmail.com (site) · rlsmotosport2@gmail.com (Solutudo)</td>
-          <td><span class="pill pill-warning"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>2 contas</span></td>
+          <td>RlsMotosport@gmail.com no site &middot; rlsmotosport2@gmail.com em outro cadastro</td>
+          <td><span class="sev sev-warn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>2 contas</span></td>
         </tr>
         <tr>
-          <td><b>Fichas duplicadas</b></td>
-          <td>2 fichas no Solutudo · possivelmente 2 páginas no Facebook (/rlsmotos e /rlsmotosport)</td>
-          <td><span class="pill pill-warning"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>Duplicidade</span></td>
+          <td><b>Cadastro repetido</b></td>
+          <td>Sua loja está cadastrada duas vezes no mesmo site &middot; e possivelmente tem duas páginas no Facebook</td>
+          <td><span class="sev sev-warn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>Duplicado</span></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p class="src" style="margin-top:8px">
-    O telefone <strong>(15) 81195161</strong> tem 8 dígitos, sem o 9 inicial: não completa chamada. Aparece numa
-    lista pública de clientes ativos de fornecedor. Fontes: Receita Federal, site oficial, Solutudo, Waze,
-    ConsertaBrasil, brasillocais.
+  <p class="src" style="margin-top:12px">
+    O telefone (15) 81195161 está com 8 dígitos, faltando o 9 na frente. Ele está publicado numa lista de
+    clientes de um fornecedor seu.
   </p>
 </section>
 
-<!-- ================= CONCORRÊNCIA ================= -->
-<section id="concorrencia">
-  <h2><span class="num">05</span> Concorrência em Boituva e região</h2>
-  <p class="sec-lede">
-    Boituva é, na prática, um duelo entre duas lojas. O restante é oficina, peças ou cadastro sem operação
-    confirmada.
-  </p>
+<!-- ===================== PRAÇA ===================== -->
+<section id="praca">
+  <div class="col">
+    <p class="eyebrow">A praça</p>
+    <h2>Boituva é um duelo entre duas lojas</h2>
+    <p class="sec-intro">O resto é oficina, loja de peças ou empresa sem operação confirmada.</p>
+  </div>
 
-  <div class="table-scroll">
+  <div class="tbl-wrap">
     <table>
       <thead>
-        <tr>
-          <th>Loja</th><th>Estoque online</th><th>Site próprio</th>
-          <th>Nota ConsertaBrasil<br><span style="font-weight:400;text-transform:none;letter-spacing:0">escala 0 a 10</span></th>
-          <th>Observação</th>
-        </tr>
+        <tr><th>Loja</th><th>Motos no site</th><th>Tem site?</th><th>Nota (de 0 a 10)</th><th>O que isso quer dizer</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td><b>RLS Motosport</b></td>
-          <td class="num">39 motos</td>
-          <td><span class="pill pill-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Sim</span></td>
-          <td class="num"><b>9,7</b></td>
-          <td>Melhor reputação entre as duas maiores. Forte em Yamaha</td>
+        <tr class="me">
+          <td>RLS Motosport</td>
+          <td class="n">39</td>
+          <td><span class="sev sev-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Sim</span></td>
+          <td class="n"><b>9,7</b></td>
+          <td>Você é o mais bem falado entre os dois maiores</td>
         </tr>
         <tr>
           <td><b>Polo Motos</b></td>
-          <td class="num">47 motos</td>
-          <td><span class="pill pill-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Sim</span></td>
-          <td class="num">7,4</td>
-          <td>Rival direto. 19 anos, mix maior (BMW, Triumph), grupo com carros</td>
+          <td class="n">47</td>
+          <td><span class="sev sev-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>Sim</span></td>
+          <td class="n">7,4</td>
+          <td>Seu rival direto. 19 anos de casa e mais motos, incluindo BMW e Triumph. Mas é bem pior avaliado</td>
         </tr>
         <tr>
           <td><b>Honda Moto Guia</b></td>
-          <td class="num muted">n/d</td>
-          <td><span class="pill pill-critical"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 3.5 8 6.9l3.4-3.4 1.1 1.1L9.1 8l3.4 3.4-1.1 1.1L8 9.1l-3.4 3.4-1.1-1.1L6.9 8 3.5 4.6z"/></svg>Não</span></td>
-          <td class="num"><b>9,8</b></td>
-          <td>Melhor nota da praça, 3 lojas, 30 anos. Sem site: vulnerável no digital</td>
+          <td class="n">n/d</td>
+          <td><span class="sev sev-crit"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 3.5 8 6.9l3.4-3.4 1.1 1.1L9.1 8l3.4 3.4-1.1 1.1L8 9.1l-3.4 3.4-1.1-1.1L6.9 8 3.5 4.6z"/></svg>Não</span></td>
+          <td class="n"><b>9,8</b></td>
+          <td>A melhor nota da cidade, com 3 lojas e 30 anos. <b>Mas não tem site: é aí que você ganha</b></td>
         </tr>
         <tr>
           <td><b>D-Motos</b></td>
-          <td class="num muted">n/d</td>
-          <td><span class="pill pill-critical"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 3.5 8 6.9l3.4-3.4 1.1 1.1L9.1 8l3.4 3.4-1.1 1.1L8 9.1l-3.4 3.4-1.1-1.1L6.9 8 3.5 4.6z"/></svg>Não</span></td>
-          <td class="num muted">n/d</td>
-          <td>Sem site nem redes. Operação não confirmada</td>
+          <td class="n">n/d</td>
+          <td><span class="sev sev-crit"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.6 3.5 8 6.9l3.4-3.4 1.1 1.1L9.1 8l3.4 3.4-1.1 1.1L8 9.1l-3.4 3.4-1.1-1.1L6.9 8 3.5 4.6z"/></svg>Não</span></td>
+          <td class="n">n/d</td>
+          <td>Sem site e sem redes sociais. Não deu para confirmar se opera de verdade</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="grid-2" style="margin-top:16px">
-    <div class="callout critical">
-      <h4>
-        <span class="pill pill-critical">
+  <div class="grid2" style="margin-top:24px">
+    <div class="note note-crit">
+      <div class="note-hd">
+        <span class="sev sev-crit">
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
-          Ameaça
+          A ameaça
         </span>
-        Jet Balbek ataca exatamente o pilar Yamaha
-      </h4>
+        <h3>Jet Balbek, a 20 km daqui</h3>
+      </div>
       <p>
-        Grupo <strong>Yamaha oficial</strong>, com unidade em Tatuí a cerca de 20 km e rede de 7 lojas na região,
-        operando uma divisão dedicada de seminovas com estoque online. A RLS se apresenta como
-        <em>"sua Yamaha 0km"</em>, e esse é o rival que disputa a mesma frase com músculo maior.
+        É grupo <strong>Yamaha oficial</strong>, tem loja em Tatuí e mais seis na região, e mantém uma
+        divisão só de seminovas com estoque no site. Você se apresenta como <em>"sua Yamaha 0km"</em>.
+        É exatamente a mesma frase que eles disputam, com sete lojas atrás.
       </p>
       <p>
-        Ressalva relevante: <strong>não foi possível confirmar em nenhuma fonte que a RLS é concessionária
-        Yamaha oficial</strong>. Se não for, esse posicionamento é frágil e a defesa mais sustentável é
-        "multimarcas com o melhor atendimento de Boituva", que é literalmente o que os clientes escrevem.
+        Preciso ser honesto: <strong>não consegui confirmar em lugar nenhum que a RLS é concessionária
+        Yamaha oficial</strong>. Se não for, brigar nesse terreno é briga perdida. Seu terreno forte é
+        "multimarcas com o melhor atendimento de Boituva", que é o que seus clientes já escrevem sozinhos.
       </p>
     </div>
-    <div class="callout good">
-      <h4>
-        <span class="pill pill-good">
+    <div class="note">
+      <div class="note-hd">
+        <span class="sev sev-good">
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>
-          Oportunidade
+          A brecha
         </span>
-        Três cidades vizinhas sem revenda de usadas
-      </h4>
+        <h3>Três cidades vizinhas sem revenda</h3>
+      </div>
       <p>
-        <strong>Porto Feliz, Iperó e Capela do Alto</strong> praticamente não têm revenda de motos usadas, só
-        peças e oficina. É alcance geográfico sem concorrente instalado, e o cliente dessas cidades já viaja para
-        comprar.
+        <strong>Porto Feliz, Iperó e Capela do Alto</strong> praticamente não têm revenda de moto usada,
+        só peça e oficina. O cliente de lá já viaja para comprar. É gente para atender sem ninguém
+        disputando.
       </p>
       <p>
-        Ninguém na região venceu o digital ainda: a líder em nota não tem site, e em Sorocaba lojas de volume
-        operam sem site nenhum. A janela está aberta e é barata.
+        E vale repetir: ninguém na região levou a internet a sério. A líder em nota não tem site, e até em
+        Sorocaba tem loja grande sem site nenhum. A janela está aberta, e é barata.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ================= PLANO ================= -->
+<!-- ===================== PLANO ===================== -->
 <section id="plano">
-  <h2><span class="num">06</span> Plano de ação, na ordem</h2>
-  <p class="sec-lede">
-    Ordenado por retorno sobre esforço. Os quatro primeiros custam pouco ou nada e valem mais que qualquer
-    reforma de site.
-  </p>
-
-  <div class="action">
-    <div class="action-rank">1</div>
-    <div class="action-body">
-      <h4>Confirmar a nota real no Google e corrigir o CNPJ nos cadastros</h4>
-      <p>
-        Dois minutos no perfil do Google resolvem a lacuna desta auditoria. E qualquer registro que use o CNPJ de
-        Alagoas precisa passar para <strong>21.532.110/0001-74</strong>, senão verificações e contratos falham
-        sem motivo aparente.
-      </p>
-      <div class="action-tags"><span class="tag">Esforço: <b>mínimo</b></span><span class="tag">Impacto: <b>destrava o resto</b></span><span class="tag">Custo: <b>zero</b></span></div>
-    </div>
+  <div class="col">
+    <p class="eyebrow">O que fazer, nesta ordem</p>
+    <h2>Comece pelo que é de graça</h2>
+    <p class="sec-intro">Os quatro primeiros custam pouco ou nada, e valem mais que site novo.</p>
   </div>
 
-  <div class="action">
-    <div class="action-rank">2</div>
-    <div class="action-body">
-      <h4>Campanha de avaliações novas e resposta às antigas</h4>
-      <p>
-        É a ação de maior retorno do relatório. A loja tem 13 elogios e a última é de 2023, enquanto a Honda Moto
-        Guia marca 9,8 com três lojas. Peça avaliação na entrega da moto, com QR code no balcão, e
-        <strong>responda todas as 13 antigas</strong>, citando de volta Arnaldo, Alberto e Rafael. Custo zero e
-        transforma o ativo invisível em sinal público.
-      </p>
-      <div class="action-tags"><span class="tag">Esforço: <b>baixo</b></span><span class="tag">Impacto: <b>alto</b></span><span class="tag">Custo: <b>zero</b></span></div>
+  <div class="steps">
+    <div class="step">
+      <div>
+        <h3>Abra seu perfil do Google e veja sua nota</h3>
+        <p>
+          Dois minutos no celular. Resolve a única coisa que ficou sem resposta neste relatório e te diz
+          onde você está de verdade. Já aproveite e veja onde aquele CNPJ de Alagoas está publicado no
+          seu nome.
+        </p>
+        <div class="chips"><span class="chip">Esforço: <b>mínimo</b></span><span class="chip">Custo: <b>zero</b></span></div>
+      </div>
     </div>
-  </div>
-
-  <div class="action">
-    <div class="action-rank">3</div>
-    <div class="action-body">
-      <h4>Abrir um chamado único na Autoconf com os quatro defeitos</h4>
-      <p>
-        Tudo isto é do fornecedor e cabe num pedido só: retirar <strong>"portas"</strong> e o "Flex" duplicado dos
-        títulos de moto; incluir <strong>dados estruturados</strong> (AutoDealer na home, Vehicle com preço nos
-        anúncios); <strong>regerar o sitemap em https</strong> sem as URLs de filtro; e trocar o
-        <strong>H1 do logo por uma manchete</strong> com "motos usadas em Boituva".
-      </p>
-      <div class="action-tags"><span class="tag">Esforço: <b>baixo</b></span><span class="tag">Impacto: <b>alto</b></span><span class="tag">Responsável: <b>Autoconf</b></span></div>
+    <div class="step">
+      <div>
+        <h3>Peça avaliação nova e responda as treze antigas</h3>
+        <p>
+          É a coisa de maior retorno do relatório inteiro. QR code no balcão e pedido na hora da entrega
+          da moto. E responda as treze antigas agradecendo, citando o Arnaldo, o Alberto e o Rafael de
+          volta. Cada resposta sua é uma prova pública de que a loja está viva e atendendo.
+        </p>
+        <div class="chips"><span class="chip">Esforço: <b>baixo</b></span><span class="chip">Custo: <b>zero</b></span><span class="chip">Retorno: <b>alto</b></span></div>
+      </div>
     </div>
-  </div>
-
-  <div class="action">
-    <div class="action-rank">4</div>
-    <div class="action-body">
-      <h4>Padronizar nome, telefone e e-mail em todas as fontes</h4>
-      <p>
-        Escolher <strong>um</strong> nome ("RLS Motosport"), <strong>um</strong> telefone principal e
-        <strong>um</strong> e-mail, e replicar igual em Google, site, Solutudo, Waze e Facebook. Eliminar a ficha
-        duplicada do Solutudo, resolver as duas páginas de Facebook e corrigir o telefone inválido junto ao
-        fornecedor que o publicou.
-      </p>
-      <div class="action-tags"><span class="tag">Esforço: <b>médio</b></span><span class="tag">Impacto: <b>médio-alto</b></span><span class="tag">Custo: <b>zero</b></span></div>
+    <div class="step">
+      <div>
+        <h3>Mande o recado para a empresa do seu site</h3>
+        <p>
+          Está pronto <a href="#recado">logo abaixo</a>. Você não precisa entender o que está escrito lá:
+          copie, cole e mande. Resolve os cinco problemas técnicos de uma vez, e a conta é deles.
+        </p>
+        <div class="chips"><span class="chip">Esforço: <b>copiar e colar</b></span><span class="chip">Quem faz: <b>Autoconf</b></span><span class="chip">Retorno: <b>alto</b></span></div>
+      </div>
     </div>
-  </div>
-
-  <div class="action">
-    <div class="action-rank">5</div>
-    <div class="action-body">
-      <h4>Cache, imagens e cabeçalhos de proteção</h4>
-      <p>
-        Ligar o cache dos estáticos, converter as imagens grandes para WebP, ativar carregamento adiantado nas 18
-        imagens restantes e incluir os quatro cabeçalhos de segurança, removendo a versão exposta do PHP. Tudo
-        configuração de servidor.
-      </p>
-      <div class="action-tags"><span class="tag">Esforço: <b>baixo</b></span><span class="tag">Impacto: <b>médio</b></span><span class="tag">Responsável: <b>Autoconf</b></span></div>
+    <div class="step">
+      <div>
+        <h3>Escolha um nome, um telefone e um e-mail. Só um de cada</h3>
+        <p>
+          Decida como a loja se chama ("RLS Motosport"), qual telefone é o principal e qual e-mail você
+          usa. Depois repita igualzinho no Google, no site, no Facebook e nos cadastros. Apague o cadastro
+          repetido e resolva a segunda página do Facebook.
+        </p>
+        <div class="chips"><span class="chip">Esforço: <b>médio</b></span><span class="chip">Custo: <b>zero</b></span></div>
+      </div>
     </div>
-  </div>
-
-  <div class="action">
-    <div class="action-rank">6</div>
-    <div class="action-body">
-      <h4>Decidir a narrativa e mirar as cidades vizinhas</h4>
-      <p>
-        Definir se o eixo é Yamaha (que colide de frente com o Jet Balbek, oficial e sete vezes maior) ou
-        atendimento multimarcas, que é o que os clientes de fato elogiam e ninguém copia. Em paralelo, criar
-        páginas e anúncios para <strong>Porto Feliz, Iperó e Capela do Alto</strong>, onde não há revenda
-        instalada.
-      </p>
-      <div class="action-tags"><span class="tag">Esforço: <b>médio</b></span><span class="tag">Impacto: <b>estratégico</b></span></div>
+    <div class="step">
+      <div>
+        <h3>Decida em que terreno você quer brigar</h3>
+        <p>
+          Ou você aposta em Yamaha, e aí encara de frente um grupo oficial de sete lojas, ou aposta em
+          atendimento multimarcas, que é o que já te elogiam e ninguém copia. Em paralelo, comece a
+          aparecer para Porto Feliz, Iperó e Capela do Alto.
+        </p>
+        <div class="chips"><span class="chip">Esforço: <b>médio</b></span><span class="chip">Retorno: <b>de longo prazo</b></span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= MÉTODO ================= -->
-<section id="metodo">
-  <h2><span class="num">07</span> Método, régua e limites</h2>
-
-  <div class="method">
-    <h3 style="margin-top:0">Como as notas foram calculadas</h3>
-    <p style="font-size:13.5px;color:var(--text-secondary)">
-      Cada nota é a porcentagem de itens aprovados numa checagem objetiva. Item cumprido conta 1, parcial conta
-      0,5, ausente conta 0. Não há peso subjetivo e qualquer pessoa pode refazer a conta.
+<!-- ===================== RECADO TÉCNICO ===================== -->
+<section id="recado">
+  <div class="col">
+    <p class="eyebrow">Para encaminhar</p>
+    <h2>Recado pronto para a empresa do seu site</h2>
+    <p class="sec-intro">
+      Esta é a única parte com palavra técnica, e ela não é para você. Copie daqui até o fim e mande
+      para a Autoconf, por e-mail ou pelo chamado. Eles vão entender exatamente o que fazer.
     </p>
-    <ul>
-      <li><b>SEO técnico (16 itens):</b> title, meta description, H1, hierarquia de títulos, canonical, robots.txt, sitemap, sitemap em https, sitemap sem filtros, lastmod, dados estruturados, Open Graph, alt em imagens, lazy loading, https, idioma declarado.</li>
-      <li><b>Performance (7 itens):</b> tempo até o 1º byte, tamanho do HTML, CDN, número de scripts, cache, otimização de imagens, lazy loading.</li>
-      <li><b>Presença local (10 itens):</b> perfil no Google, horários, categorias, Instagram, Facebook, nome único, telefone único, e-mail único, ausência de duplicatas, avaliações recentes.</li>
-      <li><b>Segurança (8 itens):</b> certificado, redirecionamento, HSTS, CSP, X-Frame-Options, X-Content-Type-Options, versão do servidor oculta, ausência de conteúdo inseguro.</li>
-      <li><b>Índice geral:</b> SEO 30%, presença local 35%, performance 20%, segurança 15%. A presença local pesa mais por ser uma loja física cujo cliente busca no mapa.</li>
-    </ul>
-
-    <h3>O que foi medido diretamente</h3>
-    <ul>
-      <li>Requisições diretas ao servidor em <b>15/07/2026</b>: cabeçalhos, tempo de resposta, HTML, sitemap, robots.txt, certificado e peso das imagens.</li>
-      <li>Teste individual de <b>8 páginas de moto</b> para os títulos, e amostragem de <b>25 das 133</b> URLs de anúncio.</li>
-      <li>Consulta aos dois CNPJs na base da <b>Receita Federal</b> via BrasilAPI.</li>
-    </ul>
-
-    <h3>Limites que o leitor precisa conhecer</h3>
-    <ul>
-      <li><b>A nota em estrelas do Google não foi obtida.</b> Dez fontes tentadas, nenhuma trouxe. Não foi estimada. Exige consulta manual.</li>
-      <li><b>O 9,7 é do ConsertaBrasil</b>, escala 0 a 10, metodologia não declarada. Não é a nota do Google e não deve ser divulgada como tal.</li>
-      <li><b>As 13 avaliações vieram de um site espelho</b>, não do Google. Se o espelho for um retrato antigo, a conclusão de "parado desde 2023" muda. Confirmar no perfil.</li>
-      <li><b>Seguidores de redes sociais</b> (Instagram 3.941, Facebook 1.803) vêm de índices de busca, não das páginas abertas, que bloqueiam leitura automatizada. Trate como aproximação.</li>
-      <li><b>Não foi confirmado</b> se a RLS é concessionária Yamaha oficial, nem sua presença em Webmotors, OLX ou iCarros, que bloqueiam acesso.</li>
-      <li>As notas do <b>PageSpeed do Google</b> não entraram: a cota pública da API estava esgotada. Os números de performance aqui são medições próprias.</li>
-    </ul>
-
-    <div class="legend">
-      <span><span class="pill pill-critical"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>Crítico</span> perda direta de cliente ou receita</span>
-      <span><span class="pill pill-serious"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>Sério</span> limita crescimento</span>
-      <span><span class="pill pill-warning"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>Atenção</span> boa prática pendente</span>
-      <span><span class="pill pill-good"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>OK</span> conforme</span>
-    </div>
   </div>
+
+  <div class="ev" style="white-space:pre-wrap">Assunto: Correções de SEO no site rlsmotos.com.br
+
+Prezados, seguem 6 itens levantados em auditoria técnica no site,
+com evidências coletadas em 15/07/2026. Pedimos correção.
+
+1) TITLE das páginas de veículo traz campo de carro
+   Todas as páginas /motos/... geram title com "portas" e com "Flex"
+   duplicado. Ex.: "HONDA BIZ 125/125i Flex Flex  portas, câmbio Manual
+   em Boituva". Confirmado em 8 de 8 páginas testadas; afeta os 133
+   anúncios. Solicitamos suprimir o campo "portas" para a categoria
+   moto e remover a duplicação do combustível.
+
+2) Ausência total de dados estruturados (JSON-LD)
+   Não há nenhum bloco application/ld+json na home, no /estoque nem
+   nas páginas de veículo. Solicitamos:
+   - Schema AutoDealer + LocalBusiness na home (nome, endereço,
+     telefone, horário, geo);
+   - Schema Vehicle + Offer em cada anúncio (price, priceCurrency,
+     modelDate, mileageFromOdometer, itemCondition, availability).
+
+3) Sitemap.xml com URLs não canônicas
+   As 182 URLs do sitemap estão em http://, e o site responde em
+   https:// com 301. Solicitamos regerar o sitemap já em https://.
+   Além disso, 42 URLs do sitemap são páginas de filtro (ex.:
+   /estoque?marca=honda-1) e cada uma se auto-canonicaliza.
+   Solicitamos removê-las do sitemap e apontar rel=canonical dessas
+   páginas para /estoque.
+
+4) H1 da home ocupado pela logomarca
+   O H1 contém apenas o &lt;a class="text-hide logo"&gt; com a imagem.
+   Solicitamos um H1 textual com a keyword local, por exemplo
+   "Motos usadas e seminovas em Boituva", mantendo o logo como link
+   sem marcação de heading.
+
+5) Cache e imagens
+   Cache-Control está como "no-cache, private", impedindo reuso de
+   estáticos. Solicitamos cache longo para imagens/CSS/JS.
+   Maior imagem: 244 KB em PNG. Solicitamos conversão para WebP.
+   Apenas 5 de 23 imagens têm loading="lazy" e 8 de 23 estão sem alt.
+
+6) Cabeçalhos de segurança e exposição de versão
+   Ausentes: Strict-Transport-Security, Content-Security-Policy,
+   X-Frame-Options, X-Content-Type-Options.
+   Presente: X-Powered-By: PHP/8.2.27 (solicitamos remover).
+   O site possui formulário de avaliação de veículo, portanto trata
+   dado pessoal.
+
+Ficamos no aguardo de um prazo para cada item.</div>
+</section>
+
+<!-- ===================== MÉTODO ===================== -->
+<section id="metodo">
+  <div class="col">
+    <p class="eyebrow">Transparência</p>
+    <h2>Como foi feito e o que ficou sem resposta</h2>
+    <p class="sec-intro">
+      Relatório que esconde o próprio limite não serve para decidir nada. Estes são os meus.
+    </p>
+  </div>
+
+  <details class="method">
+    <summary>O que eu não consegui verificar (leia antes de decidir qualquer coisa)</summary>
+    <div class="method-body">
+      <ul>
+        <li><b>Sua nota em estrelas no Google.</b> Dez fontes tentadas, nenhuma trouxe. Não inventei um número. Precisa que alguém abra o perfil e olhe.</li>
+        <li><b>O 9,7 é de um site chamado ConsertaBrasil</b>, numa escala de 0 a 10 e sem método explicado. Não é a nota do Google e não vale divulgar como se fosse.</li>
+        <li><b>As treze avaliações vieram de um site que copia o Google</b>, não do Google direto. Se esse site for uma foto antiga, a conclusão de "parado desde 2023" muda. Confirme no seu perfil.</li>
+        <li><b>Número de seguidores</b> (Instagram por volta de 3.900, Facebook por volta de 1.800) veio de busca, não das páginas abertas, porque elas bloqueiam leitura automática. Trate como estimativa.</li>
+        <li><b>Não confirmei</b> se a RLS é concessionária Yamaha oficial, nem se você está anunciando em Webmotors, OLX ou iCarros, porque esses sites bloqueiam consulta.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="method">
+    <summary>O que foi medido, e como</summary>
+    <div class="method-body">
+      <ul>
+        <li>Consultas diretas ao seu site em <b>15/07/2026</b>, medindo tempo de resposta, peso das imagens, certificado e o texto que o site entrega ao Google.</li>
+        <li>Abertura individual de <b>8 páginas de moto</b> para conferir os títulos, e conferência por amostra de <b>25 dos 133</b> anúncios.</li>
+        <li>Consulta dos <b>dois CNPJs</b> na base da Receita Federal.</li>
+        <li>Levantamento de fama e concorrência em Solutudo, Waze, ConsertaBrasil, brasillocais e nos sites dos concorrentes.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="method">
+    <summary>Como a nota foi calculada, item por item</summary>
+    <div class="method-body">
+      <p>Item cumprido vale 1 ponto, meio cumprido vale 0,5, ausente vale 0. A nota é a porcentagem do total. Sem opinião no meio.</p>
+      <ul>
+        <li><b>O quanto o Google entende seu site: 16 itens</b> conferidos, entre eles a placa da página, a etiqueta de preço, a lista de endereços e a descrição das fotos.</li>
+        <li><b>Velocidade: 7 itens</b>, entre eles tempo de resposta, peso das fotos e memória do navegador.</li>
+        <li><b>Presença no mapa: 10 itens</b>, entre eles perfil, horário, nome único, telefone único e avaliações recentes.</li>
+        <li><b>Proteção: 8 itens</b>, entre eles o certificado e as proteções que faltam.</li>
+        <li><b>Nota geral:</b> o Google pesa 30%, a presença no mapa 35%, a velocidade 20% e a proteção 15%. O mapa pesa mais porque a sua loja é de rua, e seu cliente procura pelo celular.</li>
+      </ul>
+    </div>
+  </details>
 </section>
 
 <footer>
-  <p><strong>Auditoria digital independente: RLS Motosport (Boituva/SP)</strong></p>
-  <p>Medições realizadas em 15 de julho de 2026. Documento sem vínculo com a empresa auditada, produzido a partir de dados públicos e de requisições ao servidor.</p>
-  <p>Sites e plataformas mudam. Recomenda-se refazer as medições antes de decisões de investimento.</p>
+  <p><b>Auditoria digital independente: RLS Motosport, Boituva/SP.</b> Feita em 15 de julho de 2026.</p>
+  <p>Documento sem vínculo com a empresa, montado a partir de informação pública e de consultas ao próprio site.</p>
+  <p>Site e Google mudam o tempo todo. Vale refazer a medição antes de investir dinheiro.</p>
 </footer>
 
 </div>
 
 <script>
 (function () {
-  var root = document.documentElement;
-  var btn = document.getElementById('themeBtn');
-  var saved = null;
-  try { saved = localStorage.getItem('theme'); } catch (e) {}
-  if (saved) root.setAttribute('data-theme', saved);
-  btn.addEventListener('click', function () {
-    var cur = root.getAttribute('data-theme');
-    var sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var next = cur ? (cur === 'dark' ? 'light' : 'dark') : (sysDark ? 'light' : 'dark');
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
+  var r = document.documentElement, b = document.getElementById('t'), s = null;
+  try { s = localStorage.getItem('theme'); } catch (e) {}
+  if (s) r.setAttribute('data-theme', s);
+  b.addEventListener('click', function () {
+    var c = r.getAttribute('data-theme'),
+        d = window.matchMedia('(prefers-color-scheme: dark)').matches,
+        n = c ? (c === 'dark' ? 'light' : 'dark') : (d ? 'light' : 'dark');
+    r.setAttribute('data-theme', n);
+    try { localStorage.setItem('theme', n); } catch (e) {}
   });
 })();
 </script>
