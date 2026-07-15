@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/report.css">
+<link rel="stylesheet" href="../assets/report.css?v=3">
 <style>
   /* acento CowPig: ameixa, do mundo da carne */
   :root, :root[data-theme="dark"] { --accent: #d095b0; --accent-ink: #e5b8cb; --accent-wash: #33202b; }
@@ -905,12 +905,12 @@ Ficamos no aguardo de um prazo para cada item.</div>
 (function () {
   // escuro e o padrao; o botao so existe para quem quiser claro
   var r = document.documentElement, b = document.getElementById('t'), s = null;
-  try { s = localStorage.getItem('theme'); } catch (e) {}
+  try { s = localStorage.getItem('tema_v3'); } catch (e) {}
   r.setAttribute('data-theme', s === 'light' ? 'light' : 'dark');
   b.addEventListener('click', function () {
     var n = r.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     r.setAttribute('data-theme', n);
-    try { localStorage.setItem('theme', n); } catch (e) {}
+    try { localStorage.setItem('tema_v3', n); } catch (e) {}
   });
 })();
 </script>
