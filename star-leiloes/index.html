@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Análise do site: Star Leilões</title>
+<meta name="description" content="Análise do site app.starleiloes.com.br: o que o Google recebe, prévia do link, velocidade, celular e contato.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/report.css?v=6">
+<style>
+  /* precisa casar a especificidade do report.css (:root[data-theme="dark"]), senão o acento não pega */
+  :root, :root[data-theme="dark"] { --accent: #f0b429; --accent-ink: #ffd166; --accent-wash: #2b2410; }
+  .eyebrow { color: var(--accent); }
+
+  /* prévia de link no WhatsApp */
+  .wa { background: #0b141a; border: 1px solid var(--rule); padding: 18px 14px; }
+  .wa-row { display: flex; }
+  .wa-bubble { margin-left: auto; max-width: 330px; background: #005c4b; border-radius: 8px 2px 8px 8px; padding: 6px; font-family: var(--sans); }
+  .wa-card { background: rgba(0,0,0,.22); border-radius: 6px; overflow: hidden; }
+  .wa-img { height: 132px; display: flex; align-items: center; justify-content: center; background: #0d2b25; color: #6d8b84; font-size: 12.5px; text-align: center; padding: 0 16px; line-height: 1.4; }
+  .wa-img.ok { background: #10304a; color: #cfe3f2; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+  .wa-t { color: #e9edef; font-size: 13.5px; font-weight: 700; padding: 8px 9px 1px; }
+  .wa-d { color: #b7c4c9; font-size: 12.5px; padding: 2px 9px 8px; line-height: 1.35; }
+  .wa-u { color: #8aa0a8; font-size: 11.5px; padding: 0 9px 8px; }
+  .wa-link { color: #53bdeb; font-size: 13.5px; padding: 6px 4px 2px; word-break: break-all; }
+  .wa-time { color: #8aa0a8; font-size: 10.5px; text-align: right; padding: 0 4px 2px; }
+  .wa-none { color: #7d8f96; font-size: 12.5px; font-style: italic; padding: 2px 4px 6px; }
+  @media (min-width: 761px) { .wa { min-height: 336px; } }
+
+  /* bloco de contato */
+  .cta {
+    margin-top: 30px;
+    border: 1px solid var(--rule-strong);
+    background: var(--surface);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: center;
+  }
+  .cta-eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+  }
+  .cta h3 {
+    font-family: var(--sans);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 10px;
+  }
+  .cta-line {
+    font-size: 16.5px;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 52ch;
+  }
+  .cta-act { text-align: center; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #1a1400;
+    font-family: var(--sans);
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    padding: 15px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .cta-btn:hover { background: var(--accent-ink); }
+  .cta-num {
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--ink-2);
+    margin: 10px 0 0;
+  }
+  @media (max-width: 700px) {
+    .cta { grid-template-columns: 1fr; gap: 22px; padding: 24px; }
+    .cta-act { text-align: left; }
+    .cta-btn { display: block; text-align: center; }
+  }
+
+  /* barras da nota */
+  .bars { margin-top: 26px; display: grid; gap: 12px; }
+  .bar-row { display: grid; grid-template-columns: 190px 1fr 52px; align-items: center; gap: 14px; font-family: var(--sans); font-size: 14px; }
+  .bar-track { display: block; height: 9px; background: var(--surface-sunk); border-radius: 99px; overflow: hidden; }
+  .bar-fill { display: block; height: 100%; border-radius: 99px; }
+  .bar-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+  @media (max-width: 620px) {
+    .bar-row { grid-template-columns: 1fr 52px; }
+    .bar-track { grid-column: 1 / -1; order: 3; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg3d" aria-hidden="true"></canvas>
+<div class="bg-scrim" aria-hidden="true"></div>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="mark"><i></i>Análise do site <span>/ Star Leilões</span></div>
+    <nav>
+      <a href="#pontos">Os pontos</a>
+      <a href="#google">No Google</a>
+      <a href="#fazer">O que fazer</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Análise do site &middot; 20 de julho de 2026</p>
+      <h1>O site é bom. Só que ele chega vazio no Google e no WhatsApp.</h1>
+      <p class="lede">
+        Para quem abre no celular ou no computador, o site é rápido, bonito e completo: 4 leilões no ar,
+        20 já realizados, a história do Beto Abdalla, catálogo, regulamento. Para o Google e para o
+        WhatsApp, esse mesmo endereço entrega uma página em branco. É como ter a loja cheia e a vitrine
+        coberta com papel pardo: quem entra vê tudo, quem passa na rua não vê nada.
+      </p>
+    </div>
+    <div class="gauge">
+      <svg width="168" height="168" viewBox="0 0 168 168" role="img" aria-label="Nota do site 49 de 100">
+        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--surface-sunk)" stroke-width="13"/>
+        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--warn)" stroke-width="13"
+                stroke-dasharray="215 440" stroke-linecap="butt" transform="rotate(-90 84 84)"/>
+        <text x="84" y="88" text-anchor="middle" class="gauge-num">49</text>
+        <text x="84" y="107" text-anchor="middle" class="gauge-den">de 100</text>
+      </svg>
+      <p class="gauge-cap">Nota do site</p>
+    </div>
+  </div>
+  <dl class="facts">
+    <div class="fact"><dt>Site</dt><dd><a href="https://app.starleiloes.com.br/" target="_blank" rel="noopener">app.starleiloes.com.br</a></dd></div>
+    <div class="fact"><dt>Servidor responde em</dt><dd>0,05 s</dd></div>
+    <div class="fact"><dt>Leilões no site</dt><dd>4 no ar &middot; 20 realizados</dd></div>
+  </dl>
+
+  <div class="bars">
+    <div class="bar-row"><span>O que o Google recebe</span><span class="bar-track"><span class="bar-fill" style="width:10%;background:var(--crit)"></span></span><span class="bar-val">10</span></div>
+    <div class="bar-row"><span>Confiança e contato</span><span class="bar-track"><span class="bar-fill" style="width:55%;background:var(--warn)"></span></span><span class="bar-val">55</span></div>
+    <div class="bar-row"><span>Velocidade e peso</span><span class="bar-track"><span class="bar-fill" style="width:85%;background:var(--good)"></span></span><span class="bar-val">85</span></div>
+    <div class="bar-row"><span>Uso no celular</span><span class="bar-track"><span class="bar-fill" style="width:80%;background:var(--good)"></span></span><span class="bar-val">80</span></div>
+    <div class="bar-row"><span>Cadeado e proteção</span><span class="bar-track"><span class="bar-fill" style="width:85%;background:var(--good)"></span></span><span class="bar-val">85</span></div>
+  </div>
+</section>
+
+<!-- OS PONTOS -->
+<section id="pontos">
+  <div class="col">
+    <p class="eyebrow">O resumo</p>
+    <h2>Oito pontos, do mais caro ao que já está certo</h2>
+    <p class="sec-intro">Cada bloco responde três coisas: o que está acontecendo, o que isso te custa e quem resolve. Sem palavra técnica.</p>
+  </div>
+
+  <div class="checks">
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>O que o Google recebe do seu site</h3>
+        <span class="sev sev-crit">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+          Página em branco
+        </span>
+      </div>
+      <p>
+        Seu site é montado na hora, dentro do aparelho de quem abre. A pessoa espera meio segundo e tudo
+        aparece. O robô do Google e o do WhatsApp não esperam essa montagem: eles pegam a folha que o
+        servidor entrega e vão embora. <strong>Essa folha está vazia.</strong> Ela tem 1.168 caracteres,
+        o equivalente a um bilhete curto, e a única palavra útil dentro dela é "Star Leilões".
+      </p>
+      <p>
+        Pior: as seis páginas do seu site (Home, Quem Somos, Realizados, Busca, Fale Conosco, Pré-Cadastro)
+        entregam <strong>exatamente a mesma folha vazia</strong>, com o mesmo nome. Para o Google, seu site
+        é uma página só, repetida seis vezes, sem texto nenhum. E qualquer endereço inventado, como
+        /pagina-que-nao-existe, também responde "tudo certo" em vez de "não existe".
+      </p>
+      <p>
+        <strong>O que isso te custa:</strong> os 20 leilões realizados, os nomes dos haras parceiros
+        (Fazenda Regina, Portofino, Guaxinim, Jaguaruana, Romanini), os 42 anos de história do Beto
+        Abdalla e a expansão para a vaquejada no Nordeste. Nada disso conta ponto no Google, porque nada
+        disso chega lá. Quem procura "leilão de quarto de milha" hoje encontra os concorrentes.
+      </p>
+      <div class="check-do">
+        <b>Quem resolve</b>
+        Isso não é ajuste de texto, é jeito de montar o site. Precisa fazer o servidor entregar a página
+        já pronta, com o conteúdo dentro. É serviço de quem trabalha com site, e é o ponto que mais muda
+        o jogo aqui.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>O link da bio do Instagram</h3>
+        <span class="sev sev-crit">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+          Sem foto e sem texto
+        </span>
+      </div>
+      <p>
+        Quando alguém manda o link do seu site num grupo de WhatsApp, o normal é aparecer um cartãozinho
+        com a foto do leilão, o nome e uma frase. É esse cartão que faz a pessoa clicar. O seu link
+        <strong>não gera cartão nenhum</strong>: aparece só o endereço azul, seco, igual a link suspeito.
+        Conferi na mesma hora, fingindo ser o robô do Facebook e do WhatsApp: a página não entrega nem
+        foto, nem título, nem descrição para eles.
+      </p>
+      <p>
+        <strong>O que isso te custa:</strong> este é o caminho que o seu público mais usa. O link da bio
+        do Instagram e o link repassado nos grupos de criadores são o seu principal canal, e os dois
+        chegam sem cara. Veja o antes e o depois <a href="#google">na próxima seção</a>.
+      </p>
+      <div class="check-do">
+        <b>Quem resolve</b>
+        Mesma raiz do ponto anterior. Resolvendo a entrega da página, o cartão do WhatsApp passa a
+        aparecer com a arte do leilão da vez. Serviço.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>O botão "Baixe nosso App"</h3>
+        <span class="sev sev-crit">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+          Não baixa nada
+        </span>
+      </div>
+      <p>
+        No rodapé tem o botão "Baixe nosso App". Cliquei e conferi o que vem: <strong>o aplicativo não
+        está lá</strong>. O endereço do arquivo devolve a própria página do site, não o programa. Quem
+        clica não baixa nada e fica achando que o celular dele deu problema.
+      </p>
+      <p>
+        <strong>O que isso te custa:</strong> promessa quebrada logo abaixo do CNPJ, que é justamente a
+        parte do rodapé que serve para passar confiança. E vale um alerta: mesmo que o arquivo estivesse
+        lá, baixar aplicativo por fora da loja oficial faz o celular Android mostrar aviso de "arquivo
+        pode ser prejudicial". Num site que abre com aviso de golpe, isso trabalha contra você.
+      </p>
+      <div class="check-do">
+        <b>Quem resolve</b>
+        Se o aplicativo existe, o caminho é publicar na loja da Google e apontar o botão para lá. Se não
+        existe ainda, o ajuste rápido é tirar o botão hoje mesmo. Tirar você mesmo consegue pedir; publicar
+        na loja é serviço.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>O aviso de golpe em tela cheia</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Tranca a porta
+        </span>
+      </div>
+      <p>
+        O aviso está certo e é necessário: golpista usando o nome da leiloeira é problema real e você faz
+        bem em avisar. O problema é <strong>onde</strong> ele está. Hoje, a primeira e única coisa que
+        aparece quando alguém abre o site é um quadro em tela cheia com as palavras "ALERTA DE GOLPE" em
+        letra garrafal, cobrindo o leilão. E ele volta a aparecer toda vez que a pessoa entra.
+      </p>
+      <p>
+        <strong>O que isso te custa:</strong> imagine o cliente novo, que veio do Instagram sem conhecer a
+        empresa. A primeira palavra que ele lê no seu site é "golpe". Antes de ver um cavalo, ele já ficou
+        com o pé atrás. Você paga o preço do aviso sem ganhar a venda.
+      </p>
+      <div class="check-do">
+        <b>Quem resolve</b>
+        Sem tirar o aviso: transformar em uma faixa fixa no alto da página, com um link "saiba mais" que
+        leva para uma página de segurança com o texto completo. E fazer o quadro aparecer só uma vez por
+        pessoa, não a cada visita. É ajuste de site, serviço.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Os telefones estão dentro de uma imagem</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Não dá para tocar
+        </span>
+      </div>
+      <p>
+        Os dois telefones que aparecem lá no alto, ao lado da logo, não são texto: eles estão
+        <strong>pintados dentro da figura do cabeçalho</strong>, como se fossem parte do desenho. Na
+        prática: no celular a pessoa toca no número e não acontece nada, não dá para copiar, e o Google
+        não consegue ler nenhum dos dois.
+      </p>
+      <p>
+        Tem um detalhe a conferir. O fixo que aparece na figura é <strong>(11) 4042.6572</strong>. O
+        telefone registrado no CNPJ da Star Leilões na Receita Federal é <strong>(11) 4024-6572</strong>.
+        São os mesmos algarismos em ordem trocada, então um dos dois está errado. Não dá para saber qual
+        sem ligar.
+      </p>
+      <div class="check-do">
+        <b>Quem resolve</b>
+        Conferir qual é o número certo, isso é com você. Colocar os telefones como texto clicável, de
+        forma que o toque no celular já abra a ligação, é serviço.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Dois endereços de Instagram no mesmo site</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Um deles está sozinho
+        </span>
+      </div>
+      <p>
+        A faixa amarela do topo manda seguir <strong>@starleiloesoficial</strong>. Esse é o perfil certo:
+        conferi, tem selo de verificado e 4.446 seguidores. Só que o ícone do Instagram no rodapé e a
+        página "Fale Conosco" mandam o visitante para <strong>@starleiloes</strong>, sem o "oficial". São
+        dois endereços diferentes no mesmo site.
+      </p>
+      <p>
+        <strong>O que isso te custa:</strong> numa empresa que está avisando o cliente sobre gente se
+        passando por ela, mandar o cliente para dois perfis diferentes é exatamente o tipo de confusão que
+        o golpista aproveita. Não consegui confirmar de fora se o @starleiloes é seu ou de outra pessoa.
+      </p>
+      <div class="check-do">
+        <b>Quem resolve</b>
+        Você, em minutos: definir um perfil só e pedir para trocar os dois links do rodapé e da página de
+        contato.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Velocidade e uso no celular</h3>
+        <span class="sev sev-good">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>
+          Bom
+        </span>
+      </div>
+      <p>
+        Aqui a notícia é boa. O servidor responde em 0,05 segundo, que é rápido de verdade. Abri o site
+        na tela de celular pequeno e no aparelho comum: <strong>não tem aquela rolagem lateral chata</strong>,
+        o conteúdo se ajusta, e o botão verde do WhatsApp fica sempre à mão.
+      </p>
+      <p>
+        Sobra gordura, não buraco: a página baixa 820 KB e 29 arquivos por visita, e as imagens estão em
+        formato antigo. A figura do cabeçalho, sozinha, pesa 134 KB; convertida direito ela ficaria em
+        torno de 10 KB, treze vezes mais leve. Numa fazenda com sinal fraco, isso é a diferença entre
+        abrir e desistir.
+      </p>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Cadeado e proteção</h3>
+        <span class="sev sev-good">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>
+          Em dia
+        </span>
+      </div>
+      <p>
+        Testei de fora, sem invadir. O cadeado do endereço está válido e no prazo, quem digita o endereço
+        antigo (com www ou sem nada) é levado corretamente para o endereço novo, e o site tem ligadas as
+        proteções que evitam que alguém copie sua página dentro de outro site. O CNPJ aparecendo no rodapé
+        também conta ponto: passa seriedade. Falta só a trava reforçada do cadeado, que é um detalhe
+        técnico de segunda camada.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- VEJA COM SEUS OLHOS -->
+<section id="google">
+  <div class="col">
+    <p class="eyebrow">Veja com seus olhos</p>
+    <h2>É assim que a Star Leilões chega ao mundo</h2>
+    <p class="sec-intro">Dois lugares onde o cliente decide se clica: o Google e o link no WhatsApp. Compare os lados.</p>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <p class="serp-tag">Como está hoje</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">S</span> app.starleiloes.com.br</div>
+        <div class="serp-title">Star Leilões</div>
+        <div class="serp-desc">Sem descrição. O Google não recebe frase nenhuma para mostrar aqui, e as seis páginas do site mandam este mesmo nome, repetido.</div>
+      </div>
+      <p class="src" style="margin-top:8px">Duas palavras. Não diz que é leilão, nem de cavalo, nem quando é o próximo.</p>
+    </div>
+    <div>
+      <p class="serp-tag">Como poderia aparecer</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">S</span> starleiloes.com.br</div>
+        <div class="serp-title">Star Leilões &middot; Leilões de cavalos Quarto de Milha, vaquejada e marcha</div>
+        <div class="serp-desc">Leiloeira de Roberto "Beto" Abdalla, com mais de 20 leilões realizados. Próximo leilão: Velocidade Máxima, 10 de agosto, 19h30, virtual. Catálogo e pré-lance no site.</div>
+      </div>
+      <p class="src" style="margin-top:8px">Nome, o que faz, quem assina e quando é o próximo, tudo na primeira olhada.</p>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:34px">
+    <div>
+      <p class="serp-tag">Seu link hoje, mandado no WhatsApp</p>
+      <div class="wa">
+        <div class="wa-row">
+          <div class="wa-bubble">
+            <div class="wa-link">https://app.starleiloes.com.br/</div>
+            <div class="wa-none">nenhuma prévia carregada</div>
+            <div class="wa-time">19:42 &check;&check;</div>
+          </div>
+        </div>
+      </div>
+      <p class="src" style="margin-top:8px">No grupo de criadores, seu link fica igual a link que ninguém sabe de onde veio.</p>
+    </div>
+    <div>
+      <p class="serp-tag">Como poderia chegar</p>
+      <div class="wa">
+        <div class="wa-row">
+          <div class="wa-bubble">
+            <div class="wa-card">
+              <div class="wa-img ok">ARTE DO LEILÃO<br>VELOCIDADE MÁXIMA</div>
+              <div class="wa-t">Leilão Virtual Velocidade Máxima</div>
+              <div class="wa-d">10 de agosto, 19h30. Animais em treinamento, potros e matrizes especiais. Leiloeiro Marcelo Pardini.</div>
+              <div class="wa-u">app.starleiloes.com.br</div>
+            </div>
+            <div class="wa-link">https://app.starleiloes.com.br/</div>
+            <div class="wa-time">19:42 &check;&check;</div>
+          </div>
+        </div>
+      </div>
+      <p class="src" style="margin-top:8px">A arte do leilão vira a chamada. É o mesmo link, entregando a cara certa.</p>
+    </div>
+  </div>
+
+  <div class="ev" style="margin-top:22px">Conferido em 20/07/2026, direto no que o servidor entrega:
+
+  <b>tamanho da página crua</b>  1.168 caracteres (um bilhete)
+  <b>texto visível para o robô</b>  nenhum
+  <b>descrição</b>           ausente
+  <b>foto para a prévia</b>      ausente
+  <b>título de destaque</b>     nenhum na página inicial
+  <b>páginas diferentes</b>     0 de 6 (todas entregam a mesma folha)
+  <b>endereço inventado</b>     responde "existe" em vez de "não existe"</div>
+</section>
+
+<!-- O QUE FAZER -->
+<section id="fazer">
+  <div class="col">
+    <p class="eyebrow">O que dá para fazer</p>
+    <h2>O site já está pronto por dentro. Falta ele aparecer por fora.</h2>
+    <p class="sec-intro">Quatro coisas você resolve esta semana. A que vale dinheiro de verdade é serviço.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div>
+        <h3>Os ajustes rápidos, você mesmo manda fazer</h3>
+        <p>
+          Deixar um Instagram só no site, o @starleiloesoficial, e trocar o link do rodapé e da página de
+          contato. Tirar do ar o botão "Baixe nosso App" enquanto o aplicativo não estiver publicado.
+          Conferir se o fixo certo é (11) 4042.6572 ou (11) 4024-6572. E colocar o endereço da empresa no
+          rodapé: hoje o site não diz em nenhum lugar onde a Star Leilões fica, e isso pesa para quem vai
+          fechar um negócio de cavalo por telefone.
+        </p>
+      </div>
+    </div>
+    <div class="step">
+      <div>
+        <h3>O que muda o jogo é serviço</h3>
+        <p>
+          Fazer o site entregar a página já montada, com o conteúdo dentro. É esse único ajuste que
+          destrava tudo de uma vez: o Google passa a ler seus 20 leilões realizados e a história do Beto,
+          cada leilão ganha título e descrição próprios, e o link mandado no grupo do WhatsApp passa a
+          chegar com a arte do leilão. Junto vem o aviso de golpe no lugar certo, os telefones clicáveis e
+          as imagens no formato leve.
+        </p>
+        <p>
+          Essa parte é a minha. Você não precisa entender nada de código para acompanhar: eu mostro o
+          antes e o depois, do jeito que está neste relatório.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-txt">
+      <p class="cta-eyebrow">Quem fez esta análise</p>
+      <h3>Bruno Bergamin</h3>
+      <p class="cta-line">
+        Desenvolvedor de sites. Faço o diagnóstico e resolvo, do jeito certo, sem termo técnico do seu
+        lado. Chame no WhatsApp que eu te explico o que dá para fazer primeiro.
+      </p>
+    </div>
+    <div class="cta-act">
+      <a class="cta-btn" href="https://wa.me/5515996949451" target="_blank" rel="noopener">
+        Chamar no WhatsApp
+      </a>
+      <p class="cta-num">(15) 99694-9451</p>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section id="metodo">
+  <div class="col">
+    <p class="eyebrow">Transparência</p>
+    <h2>Como foi medido e o que não entra</h2>
+  </div>
+  <details class="method">
+    <summary>O que foi conferido</summary>
+    <div class="method-body">
+      <ul>
+        <li>Consultas diretas ao site em <b>20/07/2026</b>: tempo de resposta do servidor (0,05 s, medido três vezes), cabeçalhos, certificado do cadeado, robots.txt, mapa do site, tamanho e conteúdo da página crua.</li>
+        <li>O site foi <b>aberto de verdade num navegador</b>, em tela de computador (1366px) e de celular (390px e 320px), com registro do peso baixado (820 KB em 29 arquivos), das imagens e da rolagem lateral.</li>
+        <li>A página foi pedida <b>fingindo ser o robô do Google e o do Facebook/WhatsApp</b>, para ver exatamente o que cada um recebe.</li>
+        <li>Todos os 22 links da página inicial foram clicados um a um e conferidos, incluindo o do aplicativo.</li>
+        <li>Dados da empresa conferidos no registro público da <b>Receita Federal</b> pelo CNPJ que está no rodapé do próprio site.</li>
+        <li>Perfil do Instagram conferido para saber qual dos dois endereços é o verificado.</li>
+        <li>Nota: o que o Google recebe 40%, confiança e contato 20%, velocidade e peso 20%, uso no celular 10%, cadeado e proteção 10%.</li>
+      </ul>
+    </div>
+  </details>
+  <details class="method">
+    <summary>Limites</summary>
+    <div class="method-body">
+      <ul>
+        <li>Isto analisa <b>o site</b> e como ele chega ao Google e ao WhatsApp. Não avalia os leilões, os lotes, os preços nem a operação da empresa.</li>
+        <li>A <b>nota em estrelas do Google</b> não foi obtida por ferramenta. Precisa de conferência manual no perfil da empresa.</li>
+        <li>Não foi possível confirmar de fora <b>se o perfil @starleiloes pertence à empresa</b>. O Instagram não deixa consultar isso de forma automática.</li>
+        <li>Não dá para saber, sem ligar, <b>qual dos dois telefones fixos é o correto</b>. O relatório mostra os dois, o do site e o do registro na Receita.</li>
+        <li>A área de login e a de lance ao vivo <b>não foram testadas</b>: exigiriam cadastro e entrada no sistema. Esta análise é toda por fora, sem invadir e sem criar conta.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<footer>
+  <p><b>Análise do site app.starleiloes.com.br.</b> Feita em 20 de julho de 2026, a partir de consultas públicas ao próprio site e a registros públicos.</p>
+</footer>
+
+</div>
+
+<script>window.BG3D = { a: 0xf0b429, b: 0xd99a14, dust: 0x4a3d16 };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="../assets/bg3d.js?v=1"></script>
+
+</body>
+</html>
