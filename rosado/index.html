@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Análise do site: Rosado Indústria</title>
+<meta name="description" content="Análise do site rosadoindustria.com.br: layout, segurança, Google e LGPD.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/report.css?v=6">
+<style>
+  :root { --accent: #6a97e0; --accent-ink: #a9c6f2; --accent-wash: #15243d; }
+</style>
+</head>
+<body>
+
+<canvas id="bg3d" aria-hidden="true"></canvas>
+<div class="bg-scrim" aria-hidden="true"></div>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="mark"><i></i>Análise do site <span>/ Rosado Indústria</span></div>
+    <nav>
+      <a href="#pontos">Os pontos</a>
+      <a href="#google">No Google</a>
+      <a href="#fazer">O que fazer</a>
+      <a href="#recado">Recado técnico</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="eyebrow">Análise do site &middot; 22 de julho de 2026</p>
+      <h1>Seu site é seguro. Só que o Google quase não enxerga ele.</h1>
+      <p class="lede">
+        O site está no ar, funciona no celular e passou nos testes de segurança. O que trava é o texto
+        que ele mostra para o Google: falta a placa da página e a etiqueta que faz sua empresa aparecer
+        no mapa. E falta a página de privacidade que a lei pede. Nada disso mexe no visual, é ajuste de
+        bastidor, e a maior parte é um chamado no fornecedor.
+      </p>
+    </div>
+    <div class="gauge">
+      <svg width="168" height="168" viewBox="0 0 168 168" role="img" aria-label="Nota do site 60 de 100">
+        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--surface-sunk)" stroke-width="13"/>
+        <circle cx="84" cy="84" r="70" fill="none" stroke="var(--warn)" stroke-width="13"
+                stroke-dasharray="264 440" stroke-linecap="butt" transform="rotate(-90 84 84)"/>
+        <text x="84" y="88" text-anchor="middle" class="gauge-num">60</text>
+        <text x="84" y="107" text-anchor="middle" class="gauge-den">de 100</text>
+      </svg>
+      <p class="gauge-cap">Nota do site</p>
+    </div>
+  </div>
+  <dl class="facts">
+    <div class="fact"><dt>Site</dt><dd><a href="https://rosadoindustria.com.br/" target="_blank" rel="noopener">rosadoindustria.com.br</a></dd></div>
+    <div class="fact"><dt>Abre em</dt><dd>cerca de 1,5 s</dd></div>
+    <div class="fact"><dt>Sistema</dt><dd>Joomla (versão atual)</dd></div>
+  </dl>
+</section>
+
+<!-- OS 5 PONTOS -->
+<section id="pontos">
+  <div class="col">
+    <p class="eyebrow">O resumo</p>
+    <h2>Cinco pontos, e o do Google é o que pesa</h2>
+    <p class="sec-intro">Cada bloco diz a situação e o que fazer. Nada de termo técnico.</p>
+  </div>
+
+  <div class="checks">
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Layout</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Um pouco datado
+        </span>
+      </div>
+      <p>
+        Testei no computador e no celular: o site se adapta, o menu vira sanduíche e o texto se ajusta
+        à tela, sem rolagem para o lado. Abre em cerca de 1,5 segundo. O que entrega a idade dele é o
+        banner do topo: um monte de fotos soltas sobre uma imagem de floresta que não tem a ver com
+        embalagem. Dá para trocar por uma faixa limpa com seus produtos e a frase do que você faz.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Um banner novo no topo já rejuvenesce a página. Não é urgente, é aparência.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Segurança</h3>
+        <span class="sev sev-good">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.3 11.8 2.9 8.4l1.1-1.1 2.3 2.3 5.7-5.7 1.1 1.1z"/></svg>
+          Sem brecha aparente
+        </span>
+      </div>
+      <p>
+        Testei se dá para invadir ou trocar imagem e texto do site por fora. <strong>Não deu.</strong>
+        Os arquivos de senha e de configuração estão bloqueados, as pastas não mostram a lista de
+        arquivos, e não consegui injetar conteúdo pelo endereço. O programa que roda o site (Joomla)
+        está na versão atual, e a versão do servidor não fica à mostra. Falta só ligar duas ou três
+        proteções extras, que é reforço, não buraco.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Pedir ao fornecedor para ligar os cabeçalhos de proteção que faltam. Está no recado, item 5.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>No Google</h3>
+        <span class="sev sev-crit">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5 15 14H1L8 1.5zm0 4a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 8 5.5zm0 6.75a.9.9 0 1 0 0-1.8.9.9 0 0 0 0 1.8z"/></svg>
+          Precisa mexer
+        </span>
+      </div>
+      <p>
+        É aqui que está o problema principal. Sua página não tem a <strong>placa</strong> que diz do
+        que ela trata (o título interno) nem os subtítulos que organizam o assunto: para o Google, ela
+        chega quase sem texto de referência. Também falta a <strong>etiqueta invisível</strong> que
+        descreve sua empresa (nome, endereço, telefone), que é o que faz o negócio aparecer naquele
+        cartão do lado direito da busca. Some a isso um título curto ("Rosado indústria", sem a cidade
+        nem os produtos) e a lista de páginas entregue ao Google, que está parada desde setembro de 2024.
+        Veja o exemplo <a href="#google">na próxima seção</a>.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Tudo isso é um chamado no fornecedor. É o recado, itens 1 a 4.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Google Meu Negócio</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Confirmar no celular
+        </span>
+      </div>
+      <p>
+        Seu site aponta a empresa em <strong>Votorantim</strong>. O perfil do Google (aquele cartão com
+        mapa, telefone, fotos e as estrelas de avaliação) não sai por ferramenta, então não consigo
+        confirmar por aqui se ele existe e se está com os dados certos. Isso é de graça e pesa muito para
+        quem vende na região, vale a pena checar você mesmo.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        No seu celular, busque "Rosado Indústria Votorantim" no Google. Se aparecer o cartão com mapa,
+        confira horário, telefone e fotos. Se não aparecer, criar o perfil (Google Meu Negócio) é grátis
+        e você mesmo faz.
+      </div>
+    </div>
+
+    <div class="check">
+      <div class="check-hd">
+        <h3>Lei de proteção de dados (LGPD)</h3>
+        <span class="sev sev-warn">
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.5A6.5 6.5 0 1 0 14.5 8 6.5 6.5 0 0 0 8 1.5zm0 3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4.5zm0 7.25a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></svg>
+          Precisa ajustar
+        </span>
+      </div>
+      <p>
+        Seu site usa uma ferramenta do Google para medir visitas e anúncios, e ela <strong>começa a
+        rodar assim que a página abre</strong>. O ponto é que não existe uma página de Política de
+        Privacidade, não há aviso de cookies, e o formulário de contato pede nome, e-mail e WhatsApp
+        <strong>sem uma caixinha de "li e concordo"</strong>. Como você guarda esses contatos, a lei pede
+        esse aviso claro e a chance de a pessoa recusar.
+      </p>
+      <div class="check-do">
+        <b>O que fazer</b>
+        Criar a página de privacidade, ligar um aviso de cookies e pôr a caixa de aceite embaixo do
+        formulário. Está no recado, item 6.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NO GOOGLE (mockup) -->
+<section id="google">
+  <div class="col">
+    <p class="eyebrow">Veja com seus olhos</p>
+    <h2>É assim que seu site aparece hoje</h2>
+    <p class="sec-intro">O texto de verdade que seu site manda para o Google. Compare os dois lados.</p>
+  </div>
+  <div class="grid2">
+    <div>
+      <p class="serp-tag">Como está hoje</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">R</span> rosadoindustria.com.br</div>
+        <div class="serp-title">Rosado <mark>indústria</mark></div>
+        <div class="serp-desc">Fabricação e Comércio de Lonas e Sacos Plástico</div>
+      </div>
+      <p class="src" style="margin-top:8px">Título curto e em letra minúscula, sem a cidade. Descrição de 47 caracteres, sem os produtos e sem uma chamada.</p>
+    </div>
+    <div>
+      <p class="serp-tag">Como poderia aparecer</p>
+      <div class="serp">
+        <div class="serp-url"><span class="serp-fav">R</span> rosadoindustria.com.br</div>
+        <div class="serp-title">Rosado Indústria &middot; Lonas e Sacos Plásticos em Votorantim SP</div>
+        <div class="serp-desc">Fábrica de lonas plásticas, sacos para lixo e sacos para areia sob medida. Atendemos todo o estado de SP. Peça seu orçamento pelo WhatsApp.</div>
+      </div>
+      <p class="src" style="margin-top:8px">Cidade e produtos na frente, com um convite para o orçamento.</p>
+    </div>
+  </div>
+  <div class="ev" style="margin-top:14px">Medido na home em 22/07/2026:
+
+  Título principal da página (H1) ......... 0
+  Subtítulos (H2) ......................... 0
+  Etiqueta da empresa (dados estruturados)  nenhuma
+  Link canônico ........................... ausente
+  Descrição ............................... 47 caracteres
+  Lista de páginas (sitemap) .............. parada em 24/09/2024</div>
+</section>
+
+<!-- O QUE FAZER -->
+<section id="fazer">
+  <div class="col">
+    <p class="eyebrow">Por onde começar</p>
+    <h2>Três passos</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div>
+        <h3>Mande o recado abaixo para o fornecedor</h3>
+        <p>Copie, cole e envie. Resolve de uma vez tudo que é do site, e a conta é deles.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div>
+        <h3>Confira seu perfil no Google, pelo celular</h3>
+        <p>Busque sua empresa e veja se o cartão com mapa e estrelas está no ar e certo. Se não existir, crie: é grátis e é você quem faz.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div>
+        <h3>Confira você mesmo em duas semanas</h3>
+        <p>Busque <em>site:rosadoindustria.com.br</em> no Google e veja se já aparece com a cidade e os produtos. O Google demora um pouco para reler.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECADO -->
+<section id="recado">
+  <div class="col">
+    <p class="eyebrow">Para encaminhar</p>
+    <h2>Recado pronto para o fornecedor do site</h2>
+    <p class="sec-intro">A única parte com palavra técnica, e não é para você. Copie e mande.</p>
+  </div>
+  <div class="ev" style="white-space:pre-wrap">Assunto: Ajustes de SEO, cabeçalhos e LGPD no site rosadoindustria.com.br
+
+Prezados, segue auditoria técnica (evidências de 22/07/2026, Joomla 6.1.0):
+
+1) Estrutura de headings ausente
+   A home não tem <h1> nem <h2> (0/0). Adicionar um H1 textual
+   ("Fábrica de lonas e sacos plásticos em Votorantim/SP") e usar
+   H2 nas seções (Sobre, Produtos, Contato).
+
+2) Sem dados estruturados (JSON-LD)
+   Nenhum application/ld+json na página. Adicionar Organization e
+   LocalBusiness na home (name, address, telephone, geo,
+   openingHours) e, nas páginas de produto, o tipo Product.
+
+3) Meta e canonical
+   <title> "Rosado indústria": reescrever com cidade e produtos.
+   Meta description com 47 caracteres: expandir para 120 a 160.
+   Não há <link rel="canonical">: adicionar canônica absoluta
+   (https://) em todas as páginas.
+
+4) Sitemap desatualizado
+   sitemap.xml gerado por ferramenta externa (xml-sitemaps.com),
+   com lastmod parado em 2024-09-24 e URLs no formato /index.php/.
+   Gerar pelo próprio Joomla (SEF ou OSMap) e reenviar no Google
+   Search Console.
+
+5) Cabeçalhos de segurança
+   Presentes: X-Frame-Options, Referrer-Policy, COOP; cookie com
+   HttpOnly e Secure; versão do servidor não exposta. OK.
+   Faltam: Strict-Transport-Security (HSTS),
+   X-Content-Type-Options: nosniff e Content-Security-Policy.
+   Restringir o acesso público a README.txt e web.config.txt (hoje 200).
+
+6) LGPD
+   O Google Ads/Tag Manager (AW-16796291339) carrega no <head>
+   antes de qualquer consentimento; não há Política de Privacidade
+   nem aviso de cookies. Criar /politica-de-privacidade citando a
+   Lei 13.709/2018 (finalidade, base legal e canal do titular) e
+   linkar no rodapé. Adicionar banner de consentimento que só
+   dispare os scripts após o aceite. No formulário de contato
+   (nome, e-mail, WhatsApp), incluir checkbox de aceite com link
+   para a política antes do envio.
+
+Aguardamos prazo por item.</div>
+</section>
+
+<!-- MÉTODO -->
+<section id="metodo">
+  <div class="col">
+    <p class="eyebrow">Transparência</p>
+    <h2>Como foi medido e o que não entra</h2>
+  </div>
+  <details class="method">
+    <summary>O que foi conferido</summary>
+    <div class="method-body">
+      <ul>
+        <li>Consultas diretas ao site em <b>22/07/2026</b>: velocidade, cabeçalhos, certificado e o texto entregue ao Google.</li>
+        <li><b>Checagem de segurança passiva:</b> arquivos sensíveis (.env, configuração, backup), listagem de pastas, cookie e teste de injeção por endereço com marcador inofensivo. Nada tocou o servidor de forma indevida.</li>
+        <li>Contagem exata no código: títulos, imagens e campos do formulário, e a leitura da versão do Joomla.</li>
+        <li>Nota: Google 35%, layout e velocidade 25%, segurança 20%, LGPD 10%, Meu Negócio 10%.</li>
+      </ul>
+    </div>
+  </details>
+  <details class="method">
+    <summary>Limites</summary>
+    <div class="method-body">
+      <ul>
+        <li>Isto analisa <b>o site</b> e o Google. Não avalia concorrência, preço nem estratégia comercial.</li>
+        <li>O perfil e as <b>estrelas do Google Meu Negócio</b> não saem por ferramenta; precisam de conferência manual no seu celular.</li>
+        <li>A checagem de segurança é a que se faz de fora, sem invadir. Uma auditoria profunda exigiria acesso ao servidor.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<footer>
+  <p><b>Análise do site rosadoindustria.com.br.</b> Feita em 22 de julho de 2026, a partir de consultas públicas ao próprio site.</p>
+</footer>
+
+</div>
+
+<script>window.BG3D = { a: 0x6a97e0, b: 0x4a6fc0, dust: 0x2f4478 };</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="../assets/bg3d.js?v=1"></script>
+
+</body>
+</html>
